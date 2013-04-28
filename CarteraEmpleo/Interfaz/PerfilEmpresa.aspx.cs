@@ -15,6 +15,7 @@ using CarteraEmpleo;
      {
         cGeneralMetodos insMetodos = new cGeneralMetodos();
         cEmpleosDatos insEmpleos = new cEmpleosDatos();
+        cEmpresaDatos insEmpresa = new cEmpresaDatos();
 
          protected void Page_Load(object sender, EventArgs e)
          {
@@ -22,7 +23,7 @@ using CarteraEmpleo;
              String[] usuario = insMetodos.UsuarioLogin();
              ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
 
-             String[] empresa = insMetodos.PerfilEmpresa("empresa@gmail.com");
+             String[] empresa = insEmpresa.PerfilEmpresa("empresa@gmail.com");
 
              lblCorreo.Text = empresa[0];
              lblCedula.Text = empresa[1];

@@ -90,25 +90,6 @@ namespace CarteraEmpleo.Clases
             return usuario;
         }
 
-        public String[] PerfilEmpresa(String user)
-        {
-            String[] result = new String[6];
-            DataTable usuario = webservice.Select_Usuario(user);
-            if (usuario.Columns.Count > 2)
-            {
-                foreach (DataRow row in usuario.Rows)
-                {
-                    result[0] = row["ID_CORREO"].ToString();
-                    result[1] = row["TXT_CED_JURIDICA"].ToString();
-                    result[2] = row["TXT_NOMBRE"].ToString();
-                    result[3] = row["TXT_PAG_WEB"].ToString();
-                    result[4] = row["TXT_DESC"].ToString();
-                    result[5] = row["DIR_DIRECCION"].ToString();
-                }
-            }
-            return result;
-        }
-
         public String InsertarIdioma(String idioma)
         {
             try

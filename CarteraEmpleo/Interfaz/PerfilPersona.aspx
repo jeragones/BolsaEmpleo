@@ -22,7 +22,7 @@
         <div class="titulo">Candidato</div>
         <asp:Button ID="btnCorreo" runat="server" Class="btmodificarEmprPers" Text="Enviar Correo" />
         <div class="titulosDatosBasicos">Nombre:</div>
-        <asp:Label runat="server" ID="lbl_NombreEmpresa" Text="Nombre del Candidato"/>
+        <asp:Label runat="server" ID="lblNombre" Text="Nombre del Candidato"/>
         <br/>
         <br/>           
         <table class="datosBasicosPersona">
@@ -32,20 +32,37 @@
                 </th>
             </tr>
             <tr>
-                <td class="tdleft"><asp:Label ID="Label4" runat="server" Text="Cedúla:"/></td>
-                <td class="tdleft"><asp:Label ID="Label8" runat="server" Text="Cedúla Persona"/></td>
+                <td class="tdleft">
+                    <asp:Label runat="server" Text="Correo:"/>
+                </td>
+                <td class="tdleft">
+                    <asp:Label ID="lblCorreo" runat="server" Text="Correo"/>
+                </td>
             </tr>
             <tr>
-                <td class="tdleft"><asp:Label ID="Label5" runat="server" Text="Teléfonos:"/></td>
-                <td class="tdleft"><div class="titulosDatosBasicos"><asp:Label  ID="Label6" runat="server" Text="telefonos de contacto" /></div></td>
+                <td class="tdleft">
+                    <asp:Label ID="Label1" runat="server" Text="Telefonos:"/>
+                </td>
+                <td class="tdleft">
+                    <div id="Telefonos" class="titulosDatosBasicos"><br/></div>
+                    <asp:Panel ID="pnl" runat="server"></asp:Panel>
+                </td>
             </tr>
             <tr>
-                <td class="tdleft"><asp:Label ID="Label9" runat="server" Text="Idiomas:"/></td>
-                <td class="tdleft"><div id="Idiomas" class="titulosDatosBasicos"><br/></div></td>
+                <td class="tdleft">
+                    <asp:Label runat="server" Text="Idiomas:"/>
+                </td>
+                <td class="tdleft">
+                    <div id="Idiomas" class="titulosDatosBasicos"><br/></div>
+                </td>
             </tr>
             <tr>
-                <td class="tdleft"><asp:Label ID="Label13" runat="server" Text="Dirección:"/></td>
-                <td class="tdleft"><asp:Label ID="Label14" runat="server" Text="Dirección de la persona" /></td>
+                <td class="tdleft">
+                    <asp:Label runat="server" Text="Dirección:"/>
+                </td>
+                <td class="tdleft">
+                    <asp:Label ID="lblDireccion" runat="server" Text="Dirección de la persona" />
+                </td>
             </tr> 
             <tr><td></td><td></td></tr>
             <tr>
@@ -54,12 +71,20 @@
                 </th> 
             </tr>
             <tr>
-                <td class="tdleft"><asp:Label ID="Label15" runat="server" Text="Condición Laboral:"/></td>
-                <td class="tdleft"><asp:Label ID="Label16" runat="server" Text="Empleado-Desempleado"/></td>
+                <td class="tdleft">
+                    <asp:Label runat="server" Text="Condición Laboral:"/>
+                </td>
+                <td class="tdleft">
+                    <asp:Label ID="lblCondicion" runat="server" Text="Condición de la persona" />
+                </td>
             </tr>
             <tr>
-                <td class="tdleft"><asp:Label ID="Label11" runat="server" Text="Resumen Laboral:" /></td>
-                <td class="tdleft"><asp:Label ID="Label12" runat="server" Text="Descripción de trabajos realizados"/></td>
+                <td class="tdleft">
+                    <asp:Label runat="server" Text="Resumen Laboral:"/>
+                </td>
+                <td class="tdleft">
+                    <asp:Label ID="lblExperiencia" runat="server" Text="Experiencia" />
+                </td>
             </tr>
         </table>
     </div>  

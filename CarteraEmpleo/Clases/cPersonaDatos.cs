@@ -151,5 +151,25 @@ namespace CarteraEmpleo
         public void eliminar()
         {
         }
+
+        public String[] PerfilPersona(String user)
+        {
+            String[] result = new String[5];
+            DataTable usuario = webservice.Select_Usuario(user);
+            if (usuario.Columns.Count > 2)
+            {
+                foreach (DataRow row in usuario.Rows)
+                {
+                    result[0] = row["ID_CORREO"].ToString();
+                    result[1] = row["TXT_NOMBRE"].ToString() + " " +
+                                row["TXT_APELLIDO1"].ToString() + " " +
+                                row["TXT_APELLIDO2"].ToString();
+                    result[2] = row["TXT_COND_LABORAL"].ToString();
+                    result[3] = row["TXT_CONOCIMIENTOS"].ToString();
+                    result[4] = row["DIR_DIRECCION"].ToString();
+                }
+            }
+            return result;
+        }
     }
 }

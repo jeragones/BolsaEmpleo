@@ -16,7 +16,9 @@ namespace CarteraEmpleo.Interfaz
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            ClientScriptManager cs = Page.ClientScript;
+            String[] usuario = insMetodos.UsuarioLogin();
+            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
             CargarDatos();
             //ClientScript.RegisterStartupScript(GetType(), "Idioma", "Idiomas('Ingles')", false);
             //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cPersonaDatos.NOMBRE + "','3')", true);
