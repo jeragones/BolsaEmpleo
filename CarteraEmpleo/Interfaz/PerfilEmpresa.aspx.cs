@@ -14,81 +14,38 @@ using CarteraEmpleo;
      public partial class PerfilEmpresa : System.Web.UI.Page
      {
         cGeneralMetodos insMetodos = new cGeneralMetodos();
+        cEmpleosDatos insEmpleos = new cEmpleosDatos();
 
          protected void Page_Load(object sender, EventArgs e)
          {
              ClientScriptManager cs = Page.ClientScript;
              String[] usuario = insMetodos.UsuarioLogin();
              ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
-             try {
+
+             String[] empresa = insMetodos.PerfilEmpresa("empresa@gmail.com");
+
+             lblCorreo.Text = empresa[0];
+             lblCedula.Text = empresa[1];
+             lblNombre.Text = empresa[2];
+             lblPagina.Text = empresa[3];
+             lblDescripcion.Text = empresa[4];
+             lblDireccion.Text = empresa[5];
+
+             try
+             {
                  cargarGV1();
              }
-             catch(Exception ex){
+             catch (Exception ex)
+             {
                  //return ex.Message;
              }
-        }
+         }
 
-         /**
-          * Carga la tabla de las publicaciones de las empresas
-          */
-        protected void cargarGV1() {
-            cEmpleosDatos instancia = new cEmpleosDatos();
-            DataTable dbResultado = instancia.selectPublicaciones();
-            GridView1.DataSource = dbResultado;
-            GridView1.DataBind();
-        }
-
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btEliminarOfertasEmpleo_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
-        {
-            try
-            {
-                Clases.cEmpleosDatos ins = new Clases.cEmpleosDatos();
-                string _sIndice = Convert.ToString(GridView1.SelectedDataKey.Value);
-                if (ins.Numero(_sIndice))
-                {
-                    int _iNUM_PUBLIACIONES = Convert.ToInt32(_sIndice);
-                    ins.eliminar(_iNUM_PUBLIACIONES);
-                    cargarGV1();
-                }
-            }
-            catch(Exception ex) { }
-        }
-
-        protected void InsertarPublicacion_Click(object sender, EventArgs e)
-        {
-            Clases.cEmpleosDatos ins = new Clases.cEmpleosDatos();
-            if (ins.insertar(NumJornada.Text, Horario.Text, Conocimientos.Text, Salario.Text))
-            { 
-                limpiarTextBoxIP();
-                cargarGV1();
-            }
-        }
-
-         /**
-          * Limpia los campos donde se ingresan los datos de la publicación
-          */
-        public void limpiarTextBoxIP()
-        {
-            NumJornada.Text = "";
-            Horario.Text = "";
-            Conocimientos.Text = "";
-            Salario.Text = "";
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
+         protected void cargarGV1()
+         {
+             DataTable dbResultado = insEmpleos.selectPublicaciones(lblCorreo.Text);
+             GridView1.DataSource = dbResultado;
+             GridView1.DataBind();
+         }
     }
 }

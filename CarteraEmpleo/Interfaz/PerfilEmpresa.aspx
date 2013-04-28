@@ -8,7 +8,7 @@
         <asp:Button ID="btnCorreo" runat="server" Class="btmodificarEmprPers" Text="Enviar Correo" />
         <br/>
         <div class="titulosDatosBasicos">Nombre:</div>
-        <asp:Label runat="server" ID="lbl_NombreEmpresa" Text="Nombre de la empresa"/>
+        <asp:Label runat="server" ID="lblNombre" Text="Nombre de la empresa"/>
         <br/><br/>   
         <table class="datosBasicosPersona">
             <tr>
@@ -19,7 +19,7 @@
                     <asp:Label ID="Label4" runat="server" Text="Cedúla Jurídica:"/>
                 </td>
                 <td class="tdleft">
-                    <asp:Label ID="Label1" runat="server" Text="Cedúla Jurídica"/>
+                    <asp:Label ID="lblCedula" runat="server" Text="Cedúla Jurídica"/>
                 </td>
             </tr>
             <tr>
@@ -27,7 +27,7 @@
                     <asp:Label ID="Label5" runat="server" Text="Correo Electronico"/>
                 </td>
                 <td class="tdleft">
-                    <asp:Label ID="Label6" runat="server" Text="ContactoEmpresa@mail.com"/>
+                    <asp:Label ID="lblCorreo" runat="server" Text="ContactoEmpresa@mail.com"/>
                 </td>
             </tr>
             <tr>
@@ -55,7 +55,7 @@
                     <asp:Label ID="Label13" runat="server" Text="Dirección:"/>
                 </td>
                 <td class="tdleft">
-                    <asp:Label ID="Label14" runat="server" Text="Dirección de la empresa"/>
+                    <asp:Label ID="lblDireccion" runat="server" Text="Dirección de la empresa"/>
                 </td>
             </tr>
             <tr>
@@ -63,7 +63,7 @@
                     <asp:Label ID="Label9" runat="server" Text="Pagina Web"/>
                 </td>
                 <td class="tdleft">
-                    <asp:Label ID="Label10" runat="server" Text="Empresa.com"/>
+                    <asp:Label ID="lblPagina" runat="server" Text="Empresa.com"/>
                 </td>
             </tr>
             <tr>
@@ -71,7 +71,7 @@
                     <asp:Label ID="Label17" runat="server" Text="Descripción:"/>
                 </td>
                 <td class="tdleft">
-                    <asp:Label ID="Label18" runat="server" Text="Descripción de la empresa"/>
+                    <asp:Label ID="lblDescripcion" runat="server" Text="Descripción de la empresa"/>
                 </td>
             </tr>
         </table>
@@ -81,36 +81,12 @@
 		</tr>
         <tr>
             <td class="tdleft">
-                <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1"  DataKeyNames="#">
+                <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True" DataKeyNames="#">
                     <Columns>
                         <asp:CommandField SelectText="Eliminar" ShowSelectButton="True" />
                     </Columns>
                 </asp:GridView>
             </td>
-            <td>
-                <asp:Button ID="btEliminarOfertasEmpleo" runat="server" CssClass="btmodificarEmprPers" Text="Eliminar" OnClick="btEliminarOfertasEmpleo_Click" />
-            </td>
-        </tr>
-        <tr>
-            <td class="tdleft">
-                <Table>
-                    <tr>
-                        <td>
-                            <asp:TextBox ID="NumJornada" runat="server" placeholder="Numero de Jornada"></asp:TextBox>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="Horario" runat="server" placeholder="Horario"></asp:TextBox>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="Conocimientos" runat="server" placeholder="Conocimientos"></asp:TextBox>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="Salario" runat="server" placeholder="Salario"></asp:TextBox>
-                        </td>    
-                    </tr>
-                </Table>
-            </td>
-            <td><asp:Button ID="InsertarPublicacion" runat="server" Text="Agregar" CssClass="btmodificarEmprPers" OnClick="InsertarPublicacion_Click"/></td> 
         </tr>
     </table>
     </div>

@@ -85,7 +85,7 @@ namespace CarteraEmpleo.Interfaz
         protected void cargarGV1()
         {
             
-            DataTable dbResultado = insEmpleos.selectPublicaciones();
+            DataTable dbResultado = insEmpleos.selectPublicaciones(cEmpresaDatos.CORREO);
             GridView1.DataSource = dbResultado;
             GridView1.DataBind();
         }

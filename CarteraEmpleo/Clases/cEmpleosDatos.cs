@@ -97,12 +97,12 @@ namespace CarteraEmpleo.Clases
         /**
          * 
          */
-        public DataTable selectPublicaciones() {
+        public DataTable selectPublicaciones(String p_usuario) {
             Service1 webservice = new Service1();
             DataTable dbResultado = new DataTable();
            // string _usuario = "empresa@gmail.com";
-            string _usuario = Site.USUARIO;
-            if (_usuario == "")
+            //string _usuario = Site.USUARIO;
+            if (p_usuario == "")
             {
                 MessageBox.Show("Debe iniciar sesión","Login",MessageBoxButtons.OK,MessageBoxIcon.Stop);
                 return dbResultado;
@@ -110,7 +110,7 @@ namespace CarteraEmpleo.Clases
             else {
                 try
                 {
-                    dbResultado = webservice.Select_Publicacion(_usuario);
+                    dbResultado = webservice.Select_Publicacion(p_usuario);
                     return dbResultado;
                 }
                 catch (Exception ex)
