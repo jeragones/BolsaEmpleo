@@ -11,6 +11,9 @@
     <form id="form1" runat="server">
         <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
         <asp:Button ID="btnAceptar" CssClass="btn" runat="server" Text="Button" OnClick="btnAceptar_Click" />
+        <asp:Button ID="Button" CssClass="btn" runat="server" Text="Button" OnClick="Button_Click" />
+        <asp:panel ID="pnl" runat="server"></asp:panel>
     </form>
 </body>
 </html>
+

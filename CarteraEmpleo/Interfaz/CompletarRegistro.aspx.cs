@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CarteraEmpleo.Clases;
 
+
 namespace CarteraEmpleo.Interfaz
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -31,6 +32,15 @@ namespace CarteraEmpleo.Interfaz
         {
             lblMensaje.Text = "";
             Response.Redirect("~/Interfaz/Default.aspx");
+        }
+
+        protected void Button_Click(object sender, EventArgs e)
+        {
+            Label Label1;
+            Label1 = new Label();
+            Label1.CssClass = "lbl";
+            Label1.Text = "funciona";
+            pnl.Controls.Add(Label1);
         }
     }
 }
