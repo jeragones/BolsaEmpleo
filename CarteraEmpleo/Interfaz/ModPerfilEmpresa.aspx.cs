@@ -70,6 +70,21 @@ namespace CarteraEmpleo.Interfaz
             }*/
         }
 
+        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void InsertarPublicacion_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void btEliminarOfertasEmpleo_Click(object sender, EventArgs e)
+        {
+
+        }
+
         protected void btnGuardar_Click1(object sender, EventArgs e)
         {
             DesactivarNombre();

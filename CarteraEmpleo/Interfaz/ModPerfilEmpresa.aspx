@@ -86,5 +86,43 @@
                 <td class="tdleft"><asp:TextBox ID="txtContrasena3" class="txt" runat="server"  TextMode="Password" Visible="False" Height="20px" Width="144px" /></td>
             </tr>
         </table>
+        <table class="datosBasicosPersona">
+		    <tr>
+                <th class="tdborderbot"colspan="2">Puestos Laborales en Oferta</th>
+		    </tr>
+            <tr>
+                <td class="tdleft">
+                    <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1"  DataKeyNames="#">
+                        <Columns>
+                            <asp:CommandField SelectText="Eliminar" ShowSelectButton="True" />
+                        </Columns>
+                    </asp:GridView>
+                </td>
+                <td>
+                    <asp:Button ID="btEliminarOfertasEmpleo" runat="server" CssClass="btmodificarEmprPers" Text="Eliminar" OnClick="btEliminarOfertasEmpleo_Click" />
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">
+                    <Table>
+                        <tr>
+                            <td>
+                                <asp:TextBox ID="NumJornada" runat="server" placeholder="Numero de Jornada"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Horario" runat="server" placeholder="Horario"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Conocimientos" runat="server" placeholder="Conocimientos"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Salario" runat="server" placeholder="Salario"></asp:TextBox>
+                            </td>    
+                        </tr>
+                    </Table>
+                </td>
+                <td><asp:Button ID="InsertarPublicacion" runat="server" Text="Agregar" CssClass="btmodificarEmprPers" OnClick="InsertarPublicacion_Click"/></td> 
+            </tr>
+        </table>
     </div>
 </asp:Content>
