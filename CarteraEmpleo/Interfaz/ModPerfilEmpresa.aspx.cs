@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,11 +14,22 @@ namespace CarteraEmpleo.Interfaz
         
         cEmpresaDatos insEmpresa = new cEmpresaDatos();
         cGeneralMetodos insMetodos = new cGeneralMetodos();
+        cEmpleosDatos insEmpleos = new cEmpleosDatos();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cEmpresaDatos.NOMBRE + "','2')", true);
+            ClientScriptManager cs = Page.ClientScript;
+            String[] usuario = insMetodos.UsuarioLogin();
+            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
             CargarDatos();
+            try
+            {
+                cargarGV1();
+            }
+            catch (Exception ex)
+            {
+                //return ex.Message;
+            }
         }
 
         protected void CargarDatos()
@@ -70,14 +82,47 @@ namespace CarteraEmpleo.Interfaz
             }*/
         }
 
+        protected void cargarGV1()
+        {
+            
+            DataTable dbResultado = insEmpleos.selectPublicaciones();
+            GridView1.DataSource = dbResultado;
+            GridView1.DataBind();
+        }
+
         protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
         {
-           
+            try
+            {
+                string _sIndice = Convert.ToString(GridView1.SelectedDataKey.Value);
+                if (insEmpleos.Numero(_sIndice))
+                {
+                    int _iNUM_PUBLIACIONES = Convert.ToInt32(_sIndice);
+                    insEmpleos.eliminar(_iNUM_PUBLIACIONES);
+                    cargarGV1();
+                }
+            }
+            catch (Exception ex) { }
         }
 
         protected void InsertarPublicacion_Click(object sender, EventArgs e)
         {
-            
+            if (insEmpleos.insertar(NumJornada.Text, Horario.Text, Conocimientos.Text, Salario.Text))
+            {
+                limpiarTextBoxIP();
+                cargarGV1();
+            }
+        }
+
+        /**
+         * Limpia los campos donde se ingresan los datos de la publicación
+         */
+        public void limpiarTextBoxIP()
+        {
+            NumJornada.Text = "";
+            Horario.Text = "";
+            Conocimientos.Text = "";
+            Salario.Text = "";
         }
 
         protected void btEliminarOfertasEmpleo_Click(object sender, EventArgs e)
