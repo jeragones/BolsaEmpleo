@@ -1,0 +1,39 @@
+﻿body {
+}
+
+.btn {
+	width: 130px;
+	height: 30px;
+	margin-left: 5px;
+	background: -webkit-linear-gradient(#004E9B, #00366C);
+	font-weight:bold;
+	border: 0px;
+	border-radius: 5px;
+	color: #ffffff;
+}
+
+	.btn:hover {
+		color: #B6B6B6;
+		cursor: pointer;
+	}
+
+.btn:active{
+	width: 130px;
+	height: 30px;
+	margin-left: 10px;
+	background: -webkit-linear-gradient(#004E9B, #00366C);
+	/*background: #27a55c url("Images/btns-active.png") 50% 50% repeat-x;*/
+	font-weight:bold;
+	border-radius: 3px;
+	color: #ffffff;
+}
+
+.btnAgregar {
+    background: url(../Images/agregar.png);
+    width: 25px;
+    height: 25px;
+}
+    .btnAgregar:hover
+    {
+        cursor: pointer;
+    }

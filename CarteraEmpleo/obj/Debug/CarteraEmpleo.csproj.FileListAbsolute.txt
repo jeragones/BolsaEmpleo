@@ -1,0 +1,5 @@
+C:\Users\Quincho\Documents\GitHub\BolsaEmpleos\CarteraEmpleo\bin\CarteraEmpleo.dll
+C:\Users\Quincho\Documents\GitHub\BolsaEmpleos\CarteraEmpleo\bin\CarteraEmpleo.pdb
+C:\Users\Quincho\Documents\GitHub\BolsaEmpleos\CarteraEmpleo\obj\Debug\CarteraEmpleo.dll
+C:\Users\Quincho\Documents\GitHub\BolsaEmpleos\CarteraEmpleo\obj\Debug\CarteraEmpleo.pdb
+C:\Users\Quincho\Documents\GitHub\BolsaEmpleos\CarteraEmpleo\obj\Debug\CarteraEmpleo.csprojResolveAssemblyReference.cache

@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" CodeBehind="Site.master.cs" Inherits="CarteraEmpleo.Site" %>
+<!DOCTYPE html>
+
+<html lang="es">
+    <head id="Head1" runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <title>Empleos TEC</title>
+        <link href="CSS/Styles.css" rel="stylesheet" />
+        <link href="CSS/Images.css" rel="stylesheet" />
+        <link href="CSS/sRegistrar.css" rel="stylesheet" />
+        <link href="CSS/Site.css" rel="stylesheet" />
+        <link href="CSS/Tables.css" rel="stylesheet" />
+        <link href="CSS/Buttons.css" rel="stylesheet" />
+
+        <script type="text/javascript" src="/Scripts/jQueryDefault.js"></script>
+        <script type="text/javascript" src="/Scripts/jQueryPersona.js"></script>
+
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+    <body class="fondo">
+        <div class="body">
+            <div class="imgp">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Interfaz/Default.aspx">
+                    <asp:Image ID="Image2" runat="server" ImageUrl="/Images/head2.jpg" />
+                </asp:HyperLink>
+
+            </div>
+            <form id="Form1" runat="server">  
+            <div id="menu" class="inicio" runat="server">
+                <nav id="Nav1" class="menu" runat="server">
+                    <ul>
+                        <li><a href="Default.aspx">Inicio</a></li>
+                        <!--<li><a href="Default.aspx">Perfil</a></li>-->
+                        <li><a href="Default.aspx">Buscar</a></li>
+                        <li><a href="Default.aspx">Contactar</a></li>
+                        <li><a href="Default.aspx">Acerca</a></li>
+                    </ul>
+                </nav>
+                <div id="Login" class="login"> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
+                    <asp:TextBox class="txtLogin" ID="txtCorreo" TextMode="SingleLine" Placeholder="Correo" runat="server" Height="15px" />
+                    <asp:TextBox class="txtLogin" ID="txtContrasena" TextMode="Password" Placeholder="Contraseña" runat="server" Height="15px" />
+                    <asp:Button class="btn" ID="btnIniciarSesion" Text="Iniciar Sesión" runat="server" OnClick="btnIniciarSesion_Click" />
+                </div>
+                
+            </div>
+            <asp:ContentPlaceHolder ID="Body" runat="server">
+                
+
+                
+            </asp:ContentPlaceHolder>
+            <footer>
+                
+            </footer>
+            </form>
+        </div> 
+    </body>
+</html>
