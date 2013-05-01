@@ -40,15 +40,6 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.Button btnAceptar;
         
         /// <summary>
-        /// Control Button.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button;
-        
-        /// <summary>
         /// Control pnl.
         /// </summary>
         /// <remarks>

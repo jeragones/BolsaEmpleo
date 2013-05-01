@@ -47,30 +47,52 @@
                     <div class="asterisco"> *</div>
                 </td>
             </tr>
-            <!--<tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Teléfono:" /></td>
-                <td><asp:TextBox class="txt" runat="server" placeholder="8888-8888" ID="txtTelefono" /></td>
-            </tr>-->
             <tr>
                 <td>
-                    <asp:Label ID="Label4" class="lblRegistrar" runat="server" Text="Sitio Web:" />
+                    <asp:Label class="lblRegistrar" runat="server" Text="Sitio Web:" />
                 </td>
                 <td>
                     <asp:TextBox class="txt" runat="server" placeholder="example.com" ID="txtWeb" Height="20px" Width="200px" />
                 </td>
             </tr>
-            <!--<tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Contraseña:" /></td>
-                <td><asp:TextBox class="txt" runat="server" ID="txtContrasena" /></td>
+            <tr>
+                <td>
+                    <asp:Label class="lblRegistrar" runat="server" Text="Contraseña:" />
+                </td>
+                <td>
+                    <asp:TextBox class="txt" runat="server" ID="txtContrasena" TextMode="Password" Height="20px" Width="200px" />
+                </td>
+                <td>
+                    <div class="asterisco"> *</div>
+                </td>
             </tr>
             <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Descripción:" /></td>
-                <td><asp:TextBox class="txta" runat="server" TextMode="MultiLine" ID="txtDescripcion" /></td>
+                <td>
+                    <asp:Label class="lblRegistrar" runat="server" Text="Confirmar contraseña:" />
+                </td>
+                <td>
+                    <asp:TextBox ID="txtConfirmarContrasena" class="txt" runat="server" TextMode="Password" Height="20px" Width="200px" />
+                </td>
+                <td>
+                    <div class="asterisco"> *</div>
+                </td>
             </tr>
             <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Dirección:" /></td>
-                <td><asp:TextBox class="txta" runat="server" TextMode="MultiLine" ID="txtDireccion" /></td>
-            </tr>-->
+                <td>
+                    <asp:Label class="lblRegistrar" runat="server" Text="Descripción:" />
+                </td>
+                <td>
+                    <asp:TextBox class="txta" runat="server" TextMode="MultiLine" ID="txtDescripcion" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label class="lblRegistrar" runat="server" Text="Dirección:" />
+                </td>
+                <td>
+                    <asp:TextBox class="txta" runat="server" TextMode="MultiLine" ID="txtDireccion" />
+                </td>
+            </tr>
             <tr>
                 <td></td>
                 <td>

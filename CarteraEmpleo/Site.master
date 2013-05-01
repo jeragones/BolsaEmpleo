@@ -38,12 +38,13 @@
                         <li><a href="Default.aspx">Acerca</a></li>
                     </ul>
                 </nav>
-                <div id="Login" class="login"> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
+                <asp:Panel ID="pnlLogin" CssClass="login" runat="server">
                     <asp:TextBox class="txtLogin" ID="txtCorreo" TextMode="SingleLine" Placeholder="Correo" runat="server" Height="15px" />
                     <asp:TextBox class="txtLogin" ID="txtContrasena" TextMode="Password" Placeholder="Contraseña" runat="server" Height="15px" />
                     <asp:Button class="btn" ID="btnIniciarSesion" Text="Iniciar Sesión" runat="server" OnClick="btnIniciarSesion_Click" />
-                </div>
-                
+                    <asp:LinkButton ID="lnkNombre" CssClass="UsuarioLink" Visible="false" runat="server" OnClick="UsuarioLogin_Click"/>
+                    <asp:LinkButton ID="lnkCerrarSesion" CssClass="UsuarioLink" Text="Cerrar Sesión" Visible="false" runat="server" OnClick="CerrarSesion_Click" />
+                </asp:Panel>
             </div>
             <asp:ContentPlaceHolder ID="Body" runat="server">
                 

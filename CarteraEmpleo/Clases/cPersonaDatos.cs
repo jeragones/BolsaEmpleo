@@ -80,7 +80,7 @@ namespace CarteraEmpleo
             {
                 webservice.Insert_Persona(p_correo, p_contrasena1, " ", p_direccion,
                                             _sNombre[0], _sNombre[1], _sNombre[2],
-                                            _cCondicion, " "/*, "false"*/);
+                                            _cCondicion, " ");
                 return ("");
             }
             catch (Exception e)

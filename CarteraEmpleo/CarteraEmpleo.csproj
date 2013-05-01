@@ -98,6 +98,7 @@
     <Compile Include="Clases\cEmpleosDatos.cs" />
     <Compile Include="Clases\cEmpresaDatos.cs" />
     <Compile Include="Clases\cGeneralMetodos.cs" />
+    <Compile Include="Clases\cInterfaz.cs" />
     <Compile Include="Clases\cPersonaDatos.cs" />
     <Compile Include="Clases\Service1.cs" />
     <Compile Include="Interfaz\Default.aspx.cs">

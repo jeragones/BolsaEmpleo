@@ -15,6 +15,7 @@ namespace CarteraEmpleo.Interfaz
         cEmpresaDatos insEmpresa = new cEmpresaDatos();
         cGeneralMetodos insMetodos = new cGeneralMetodos();
         cEmpleosDatos insEmpleos = new cEmpleosDatos();
+        cInterfaz insInterfaz = new cInterfaz();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -64,16 +65,12 @@ namespace CarteraEmpleo.Interfaz
                 txtDescripcion.Text = lblDescripcion.Text;
             }
 
-            if (cEmpresaDatos.TELEFONO != null)
+            //String[] telefonos = insMetodos.ConsultaTelefonos(cEmpresaDatos.CORREO); *****************************************************
+            String[] telefonos = {"8914-2348","8410-4507","2460-1913"};
+            for (int i = 0; i < telefonos.Length; i++) 
             {
-                for (int i = 0; i < cEmpresaDatos.TELEFONO.Length; i++)
-                {
-                    telefono += cEmpresaDatos.TELEFONO[i] + ",";
-                }
-                //if (!cs.IsStartupScriptRegistered(sTipo, script3))
-                //{
-                //    cs.RegisterStartupScript(sTipo, script3, "Telefonos('" + idioma + "')", true);
-                //}
+                Label etiqueta = insInterfaz.CrearEtiqueta("telefono" + i.ToString(), "lblRegistrar", telefonos[i]);
+                pnlTelefono.Controls.Add(etiqueta);
             }
 
             /*if (!cs.IsStartupScriptRegistered(sTipo, script1))

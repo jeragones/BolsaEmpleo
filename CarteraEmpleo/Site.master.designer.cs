@@ -76,6 +76,15 @@ namespace CarteraEmpleo {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Nav1;
         
         /// <summary>
+        /// Control pnlLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlLogin;
+        
+        /// <summary>
         /// Control txtCorreo.
         /// </summary>
         /// <remarks>
@@ -101,6 +110,24 @@ namespace CarteraEmpleo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnIniciarSesion;
+        
+        /// <summary>
+        /// Control lnkNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkNombre;
+        
+        /// <summary>
+        /// Control lnkCerrarSesion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkCerrarSesion;
         
         /// <summary>
         /// Control Body.

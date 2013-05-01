@@ -102,6 +102,12 @@
 	resize:none;
 }
 
+.pnl{
+    vertical-align:top;
+    height:auto;
+    width:auto;
+}
+
 .error{
 	color: #B90000;
 	font-weight:bold;

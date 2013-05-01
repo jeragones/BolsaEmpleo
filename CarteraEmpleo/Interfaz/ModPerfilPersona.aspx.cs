@@ -13,6 +13,7 @@ namespace CarteraEmpleo.Interfaz
         
         cPersonaDatos insPersona = new cPersonaDatos();
         cGeneralMetodos insMetodos = new cGeneralMetodos();
+        cInterfaz insInterfaz = new cInterfaz();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +32,7 @@ namespace CarteraEmpleo.Interfaz
         {
             //String script1 = "InicioSesion";
             //String script2 = "ImpIdiomas";
-            //String script3 = "ImpTelefonos";
+            String script3 = "ImpTelefonos";
             //Type sTipo = this.GetType();
             //ClientScriptManager cs = Page.ClientScript;
             
@@ -60,9 +61,23 @@ namespace CarteraEmpleo.Interfaz
                 }
                 cmbCondicion.Text = lblCondicion.Text;
             }
-            
-            /*if (cPersonaDatos.IDIOMA != null) 
+
+            //String[] telefonos = insMetodos.ConsultaTelefonos(cPersonaDatos.CORREO);
+            //String[] telefonos = { "8914-2348", "8410-4507", "2460-1913" };
+            for (int i = 0; i < cPersonaDatos.TELEFONO.Length; i++)
             {
+                Label etiqueta = insInterfaz.CrearEtiqueta("telefono" + i.ToString(), "lblRegistrar", cPersonaDatos.TELEFONO[i]);
+                pnlTelefono.Controls.Add(etiqueta);
+            }
+
+            for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++)
+            {
+                Label etiqueta = insInterfaz.CrearEtiqueta("idioma" + i.ToString(), "lblRegistrar", cPersonaDatos.IDIOMA[i]);
+                pnlIdioma.Controls.Add(etiqueta);
+            }
+
+            //if (cPersonaDatos.IDIOMA != null) 
+            /*{
                 for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++)
                 {
                     idioma += cPersonaDatos.IDIOMA[i] + ",";

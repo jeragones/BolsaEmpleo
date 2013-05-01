@@ -59,7 +59,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Body" runat="server">
     <div id="Principal" runat="server">
         <div class="register">
-            <asp:Label id="lblTitulo" runat="server" Text="Registrarse como:" class="titulo" />
+            <asp:Label id="lblTitulo" runat="server" Text="Registrarse:" class="titulo" />
             <hr id="linea" runat="server"/>
             <asp:HyperLink ID="btnRegPersona" runat="server" NavigateUrl="~/Interfaz/RegistroPersona.aspx">
                 <asp:Image class="RegistroImagen" ID="imgRegPersona" runat="server" ImageUrl="~/Images/Usuario2.png" />

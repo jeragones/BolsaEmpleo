@@ -18,10 +18,6 @@
                     <div class="asterisco"> *</div>
                 </td>
             </tr>
-            <!--<tr>
-                <td><asp:Label runat="server" Text="Cédula:" /></td>
-                <td><asp:TextBox class="txt" runat="server" placeholder="1-1111-1111" ID="txtCedula" /></td>
-            </tr>-->
             <tr>
                 <td>
                     <asp:Label ID="Label2" class="lblRegistrar" runat="server" Text="Correo electrónico:" />
@@ -44,10 +40,6 @@
                     <div class="asterisco"> *</div>
                 </td>
             </tr>
-            <!--<tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Idioma(s):" /></td>
-                <td><asp:DropDownList ID="cmbIdioma" class="txt" runat="server" /></td>
-            </tr>-->
             <tr>
                 <td>
                     <asp:Label ID="Label4" class="lblRegistrar" runat="server" Text="Condicion Laboral:" />
@@ -58,10 +50,6 @@
                         <asp:ListItem Text="Empleado" />
                     </asp:DropDownList>
                 </td>
-                <!--<td>
-                    <asp:RadioButton runat="server" Text="Empleado" GroupName="rbtCondicionLaboral" ID="rbEmpleado" />
-                    <asp:RadioButton runat="server" Text="Desempleado" GroupName="rbtCondicionLaboral" ID="rbDesempleado" />
-                </td>-->
             </tr>
             <tr>
                 <td>
@@ -87,16 +75,12 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="Label7" class="lblRegistrar" runat="server" Text="Dirección:" />
+                    <asp:Label class="lblRegistrar" runat="server" Text="Dirección:" />
                 </td>
                 <td>
                     <asp:TextBox ID="txtDireccion" class="txta" runat="server" TextMode="MultiLine" Width="200px" />
                 </td>
             </tr>
-            <!--<tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Experiencia Laboral:" /></td>
-                <td><asp:TextBox Class="txta" runat="server" TextMode="MultiLine" ID="txtExperiencia" /></td>
-            </tr>-->
             <tr>
                 <td></td>
                 <td>

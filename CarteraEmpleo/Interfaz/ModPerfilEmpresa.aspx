@@ -37,10 +37,17 @@
                 <!--<td class="tdleft"><asp:LinkButton class="Link" runat="server" ID="hplCorreo" text="Editar"  /></td>-->
             </tr>
             <tr>
-                <td class="tdleft"><asp:Label ID="Label3" class="lblRegistrar" runat="server" Text="Teléfono:" /></td>
-                <td class="tdleft"><asp:TextBox class="txt" runat="server" placeholder="8888-8888" ID="txtTelefono" Visible="False" Height="20px" Width="175px" />
-                    <asp:Label ID="lblTelefono" class="lblRegistrar" runat="server" Text="8888-8888" /></td>
-                <td class="tdleft"><asp:LinkButton class="Link" runat="server" ID="hplTelefono" text="Editar" OnClick="hplTelefono_Click" /></td>
+                <td class="tdleft">
+                    <asp:Label ID="Label3" class="lblRegistrar" runat="server" Text="Teléfono:" />
+                </td>
+                <td class="tdleft">
+                    <asp:TextBox class="txt" runat="server" placeholder="8888-8888" ID="txtTelefono" Visible="False" Height="20px" Width="175px" />
+                    <asp:Panel ID="pnlTelefono" runat="server" CssClass="pnl"></asp:Panel>
+                    <!--<asp:Label ID="lblTelefono" class="lblRegistrar" runat="server" Text="8888-8888" />-->
+                </td>
+                <td class="tdleft">
+                    <asp:LinkButton class="Link" runat="server" ID="hplTelefono" text="Editar" OnClick="hplTelefono_Click" />
+                </td>
             </tr>
             <!--<tr>
                 <td class="tdleft"><asp:Label ID="Label10" class="lblRegistrar" runat="server" Text="Fax:" /></td>

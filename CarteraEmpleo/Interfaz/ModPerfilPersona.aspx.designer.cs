@@ -112,6 +112,15 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.Button btnAgregarTelefono;
         
         /// <summary>
+        /// Control pnlTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlTelefono;
+        
+        /// <summary>
         /// Control hplTelefono.
         /// </summary>
         /// <remarks>
@@ -137,6 +146,15 @@ namespace CarteraEmpleo.Interfaz {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregarIdioma;
+        
+        /// <summary>
+        /// Control pnlIdioma.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlIdioma;
         
         /// <summary>
         /// Control hplIdioma.

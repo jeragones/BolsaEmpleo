@@ -57,7 +57,7 @@ namespace CarteraEmpleo
 
             try
             {
-                webservice.Insert_Empresa(p_correo, p_contrasena1, "", "", p_nombre, p_cedula, p_sitio/*, "false"*/);
+                webservice.Insert_Empresa(p_correo, p_contrasena1, "", "", p_nombre, p_cedula, p_sitio);
             }
             catch (Exception e) { 
                 return("Error en el registro.");

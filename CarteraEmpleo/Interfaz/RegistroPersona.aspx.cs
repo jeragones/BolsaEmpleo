@@ -17,22 +17,23 @@ using CarteraEmpleo.Clases;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClientScriptManager cs = Page.ClientScript;
-            String[] usuario = insMetodos.UsuarioLogin();
+            
+            //ClientScriptManager cs = Page.ClientScript;
+            //String[] usuario = insMetodos.UsuarioLogin();
  
-            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','0')", true);
+            //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','0')", true);
             
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            msgError.Text = insPersona.Insertar(txtNombre.Text, txtCorreo.Text, cmbCondicion.Text, 
-                                             txtContrasena.Text, txtConfirmarContrasena.Text, txtDireccion.Text);
+            //msgError.Text = insPersona.Insertar(txtNombre.Text, txtCorreo.Text, cmbCondicion.Text, 
+            //                                 txtContrasena.Text, txtConfirmarContrasena.Text, txtDireccion.Text);
             if (msgError.Text.Equals(""))
             {
                 String asunto = "Registro de Cartera de Empleo";
-                String mensaje = "Buenos días "+ txtNombre.Text +
-                                 "<br />" + "Gracias por su registro de usuario en la Cartera de Empleos de Turísmo, para completar su registro ingrese al enlace que aparece a continuación: " +
-                                 "<br />" + "http://localhost:49367/Interfaz/CompletarRegistro.aspx?U=" + txtCorreo.Text + ",T=1"; 
+                String mensaje = "<p>Buenos días "+ txtNombre.Text + "</p>" +
+                                 "<p>Gracias por su registro de usuario en la Cartera de Empleos de Turísmo, para completar su registro ingrese al enlace que aparece a continuación: </p>" +
+                                 "<p>http://localhost:49367/Interfaz/CompletarRegistro.aspx?U=" + txtCorreo.Text + "&T=1</p>"; 
                 Boolean respuesta = insCorreo.Correo(txtCorreo.Text, "Administrador", "correo del administrador", 
                                                      asunto, mensaje, "Contrasena", "archivo");
                 Limpiar();

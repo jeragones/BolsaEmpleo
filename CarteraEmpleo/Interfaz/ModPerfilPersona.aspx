@@ -41,13 +41,11 @@
                 <td class="tdleft">
                     <asp:TextBox ID="txtTelefono" class="txt" runat="server" placeholder="0000-0000"  Visible="False" Height="20px" Width="160px" />&nbsp;
                     <asp:Button ID="btnAgregarTelefono" CssClass="btnAgregar"  runat="server" onclick="AgregarTelefono_Click" Visible="false"/>
+                    <asp:Panel ID="pnlTelefono" runat="server"></asp:Panel>
                     <div id="Telefonos" class="telefonos"></div> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
                 </td>
                 <td>
                     <asp:LinkButton class="Link" runat="server" ID="hplTelefono" text="Agregar" OnClick="hplTelefono_Click" />
-                </td>
-                <td class="tdleft">
-                    
                 </td>
             </tr>
             <tr>
@@ -57,6 +55,7 @@
                 <td class="tdleft">
                     <asp:DropDownList ID="cmbIdioma" class="txt" runat="server"  Visible="False" Height="20px" Width="166px"/>&nbsp;
                     <asp:Button ID="btnAgregarIdioma" CssClass="btnAgregar"  runat="server" onclick="AgregarIdioma_Click" Visible="false"/>
+                    <asp:Panel ID="pnlIdioma" runat="server"></asp:Panel>
                     <div id="Idiomas" class="idiomas"></div> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
                 </td>
                 <td>
