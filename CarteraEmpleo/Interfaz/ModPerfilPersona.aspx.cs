@@ -73,6 +73,7 @@ namespace CarteraEmpleo.Interfaz
             for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++)
             {
                 Label etiqueta = insInterfaz.CrearEtiqueta("idioma" + i.ToString(), "lblRegistrar", cPersonaDatos.IDIOMA[i]);
+                
                 pnlIdioma.Controls.Add(etiqueta);
             }
 

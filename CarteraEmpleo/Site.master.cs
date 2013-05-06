@@ -77,6 +77,7 @@ namespace CarteraEmpleo
             lnkCerrarSesion.Visible = false;
             lnkNombre.Visible = false;
             USUARIO = "";
+            Response.Redirect("~/Interfaz/Default.aspx");
         }
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -92,6 +93,17 @@ namespace CarteraEmpleo
                 lnkCerrarSesion.Visible = true;
                 lnkNombre.Visible = true;
                 lnkNombre.Text = cPersonaDatos.NOMBRE;
+                switch (TIPO)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        Response.Redirect("~/Interfaz/ModPerfilEmpresa.aspx");
+                        break;
+                    case 3:
+                        Response.Redirect("~/Interfaz/ModPerfilPersona.aspx");
+                        break;
+                }
             }
             else
             {
