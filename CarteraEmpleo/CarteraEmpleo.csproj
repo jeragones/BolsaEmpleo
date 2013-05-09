@@ -92,6 +92,9 @@
     <Content Include="Images\img-news\transpBlack.png" />
     <Content Include="Images\Usuario.png" />
     <Content Include="Images\Usuario2.png" />
+    <Content Include="Interfaz\BusquedaEmpresa.aspx" />
+    <Content Include="Interfaz\BusquedaPersona.aspx" />
+    <Content Include="Interfaz\Correo.aspx" />
     <Content Include="Interfaz\Default.aspx" />
     <Compile Include="Clases\cAdministradorDatos.cs" />
     <Compile Include="Clases\cCorreoComunicacion.cs" />
@@ -101,6 +104,27 @@
     <Compile Include="Clases\cInterfaz.cs" />
     <Compile Include="Clases\cPersonaDatos.cs" />
     <Compile Include="Clases\Service1.cs" />
+    <Compile Include="Interfaz\BusquedaEmpresa.aspx.cs">
+      <DependentUpon>BusquedaEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interfaz\BusquedaEmpresa.aspx.designer.cs">
+      <DependentUpon>BusquedaEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\BusquedaPersona.aspx.cs">
+      <DependentUpon>BusquedaPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interfaz\BusquedaPersona.aspx.designer.cs">
+      <DependentUpon>BusquedaPersona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Correo.aspx.cs">
+      <DependentUpon>Correo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Correo.aspx.designer.cs">
+      <DependentUpon>Correo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
