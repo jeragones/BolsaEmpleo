@@ -48,5 +48,12 @@ using CarteraEmpleo;
              GridView1.DataSource = dbResultado;
              GridView1.DataBind();
          }
+
+         protected void btnCorreo_Click(object sender, EventArgs e)
+         {
+             cCorreoComunicacion.DESTINATARIO = lblCorreo.Text;
+             cCorreoComunicacion.TIPO = 2;
+             Response.Redirect("~/Interfaz/Correo.aspx");
+         }
     }
 }

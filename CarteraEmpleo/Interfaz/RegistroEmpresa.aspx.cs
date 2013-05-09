@@ -27,9 +27,10 @@ using CarteraEmpleo.Clases;
         {
             
             String _sCedula = txtCedula1.Text + "-" + txtCedula2.Text + "-" + txtCedula3.Text;
-            //msgError.Text = insEmpresa.insertar(txtNombre.Text, txtContrasena.Text, txtContrasena.Text, _sCedula, txtCorreo.Text, txtWeb.Text);
+            msgError.Text = insEmpresa.insertar(txtNombre.Text, txtContrasena.Text, txtContrasena.Text, _sCedula, txtCorreo.Text, txtWeb.Text);
             if (msgError.Text.Equals(""))
-            {   
+            {
+                insMetodos.ModificarEstado(txtCorreo.Text, 'I');
                 String asunto = "Solicitud de registro en Cartera de Empleo Turísmo";
                 String mensaje = "<p>Cartera de Empleos de Turísmo </p>" +
                                  "<p>La empresa <b>" + txtNombre.Text + "</b> desea registrarse en el sitio web, a continuación aparece la información de la empresa: </p>" +
@@ -112,7 +113,7 @@ using CarteraEmpleo.Clases;
                                     "</tr>" +
                                  "</table>";
                 Boolean respuesta = insCorreo.Correo("turismo.empleos@gmail.com", "Cartera de Empleo de Turísmo", txtCorreo.Text,
-                                                     asunto, mensaje, txtContrasena.Text, "archivo");
+                                                     asunto, mensaje, txtContrasena.Text, null);
                 Limpiar();
                 Response.Redirect("~/Interfaz/CompletarRegistro.aspx?T=4");
             }

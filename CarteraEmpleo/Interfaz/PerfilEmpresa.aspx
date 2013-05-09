@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div id="3" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Perfil Empresa</div>
-        <asp:Button ID="btnCorreo" runat="server" Class="btmodificarEmprPers" Text="Enviar Correo" />
+        <asp:Button ID="btnCorreo" runat="server" Class="btmodificarEmprPers" Text="Enviar Correo" OnClick="btnCorreo_Click" />
         <br/>
         <div class="titulosDatosBasicos">Nombre:</div>
         <asp:Label runat="server" ID="lblNombre" Text="Nombre de la empresa"/>

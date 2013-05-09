@@ -21,6 +21,7 @@ namespace CarteraEmpleo
         cGeneralMetodos insMetodos = new cGeneralMetodos();
 
         public static String CORREO;
+        public static String CONTRASEÑA;
         public static String NOMBRE;
         public static String CEDJURIDICA;
         public static String PAGINA;

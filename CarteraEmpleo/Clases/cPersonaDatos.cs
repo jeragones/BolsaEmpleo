@@ -23,6 +23,7 @@ namespace CarteraEmpleo
         Service1 webservice = new Service1();
 
         public static String CORREO;
+        public static String CONTRASEÑA;
         public static String NOMBRE;
         public static String[] TELEFONO;
         public static String[] IDIOMA;

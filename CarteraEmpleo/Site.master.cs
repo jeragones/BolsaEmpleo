@@ -49,9 +49,12 @@ namespace CarteraEmpleo
                 btnIniciarSesion.Visible = true;
                 lnkCerrarSesion.Visible = false;
                 lnkNombre.Visible = false;
-                txtCorreo.Text = "";
-                //txtContrasena.Text = "";
             }
+        }
+
+        protected void Buscar() 
+        {
+            txtCorreo.Text = "funciona";
         }
 
         protected void UsuarioLogin_Click(object sender, EventArgs e) 
@@ -82,8 +85,7 @@ namespace CarteraEmpleo
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            String usuario = "";
-            usuario = insMetodos.IniciarSesion(txtCorreo.Text, txtContrasena.Text);
+            String usuario = insMetodos.IniciarSesion(txtCorreo.Text, txtContrasena.Text);
             
             if (Usuario())
             {

@@ -6,7 +6,7 @@
         <div class="titulo">Enviar Correo</div>
         <br/>
         <table>
-            <tr>
+            <%--<tr>
                 <td>
                     <asp:Label ID="Label1" class="lblRegistrar" runat="server" Text="De:" />
                 </td>
@@ -21,10 +21,10 @@
                 <td>
                     <asp:Label ID="txtPara" Class="txt" runat="server" Text="" Height="20px" Width="200px" />
                 </td>
-            </tr>   
+            </tr>--%>   
            <tr>
                 <td>
-                    <asp:Label ID="Label3" class="lblRegistrar" runat="server" Text="Asunto:" />
+                    <asp:Label class="lblRegistrar" runat="server" Text="Asunto:" />
                 </td>
                 <td>
                     <asp:TextBox ID="txtAsunto" Class="txt" runat="server" Text="" Height="20px" Width="202px" />
@@ -32,8 +32,15 @@
             </tr>          
             <tr>
                 <td colspan="2">
-                    <asp:TextBox ID="txtDireccion" class="txta" runat="server" TextMode="MultiLine" Width="365px" Height="196px" />
+                    <asp:TextBox ID="txtMensaje" class="txta" runat="server" TextMode="MultiLine" Width="365px" Height="196px" />
                 </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label class="lblRegistrar" runat="server" Text="Archivo adjunto:" />
+                </td>
+                <td>
+                    <asp:FileUpload ID="fluArchivo" runat="server" Height="20px" Width="202px" />
             </tr>
             <tr>
                 <td></td>
@@ -45,7 +52,7 @@
             <tr>
                 <td>
                     <br/>
-                    <asp:Button class="btn" runat="server" Text="Enviar" ID="btnEnviar"/>
+                    <asp:Button class="btn" runat="server" Text="Enviar" ID="btnEnviar" OnClick="btnEnviar_Click"/>
                 </td>
                 <td>
                     <br/>

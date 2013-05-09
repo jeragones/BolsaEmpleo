@@ -12,37 +12,36 @@ namespace CarteraEmpleo.Clases
 {
     public class cCorreoComunicacion
     {
-        String CORREO = "turismo.empleos@gmail.com";
-        String CONTRASENA = "Turismo.123";
+        public static String DESTINATARIO = "";
+        public static int TIPO = 0;
 
         public Boolean CorreoRegistro(String to, String from, String pass)
         {
             String asunto = "";
             String mensaje = "";
-            return Correo(to, "Administrador", from, asunto, mensaje, pass, "");
+            return Correo(to, "Administrador", from, asunto, mensaje, pass, null);
         }
 
-        public Boolean Correo(String to, String sender, String from, String subject, String body, String pass, String archivo)
+        public Boolean Correo(String to, String sender, String from, String subject, String body, String pass, Attachment archivo)
         {
             MailMessage msg = new MailMessage();
-            msg.From = new MailAddress(CORREO, sender);
+            msg.From = new MailAddress(from, sender);
             msg.To.Add(new MailAddress(to));
             msg.Subject = subject;
             msg.Body = body;
             msg.IsBodyHtml = true;
-            /*
-            if (archivo.HasFile)
+            
+            if (archivo != null)
             {
-                msg.Attachments.Add(new Attachment(archivo));
-                //archivo.PostedFile.InputStream, archivo.Filename
-            }*/
+                msg.Attachments.Add(archivo);
+            }
             SmtpClient smtp = new SmtpClient();
             //smtp.Host = "smtp.mail.yahoo.com"; // yahoo
             //smtp.Host = "smtp.live.com"; // hotmail
             //smtp.Host = "localhost"; // servidor local
             smtp.Host = "smtp.gmail.com"; // gmail
             smtp.Port = 25;
-            smtp.Credentials = new NetworkCredential(CORREO, CONTRASENA);
+            smtp.Credentials = new NetworkCredential(from, pass);
             smtp.EnableSsl = true;
             try
             {

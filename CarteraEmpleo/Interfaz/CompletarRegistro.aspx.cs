@@ -19,8 +19,6 @@ namespace CarteraEmpleo.Interfaz
             String accion = Request.QueryString["T"];
             String usuario = Request.QueryString["U"];
             lblMensaje.Text = insMetodos.Registrar(usuario, Convert.ToInt32(accion));
-            
-
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)

@@ -17,31 +17,13 @@ namespace CarteraEmpleo.Interfaz
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClientScriptManager cs = Page.ClientScript;
             String[] usuario = insMetodos.UsuarioLogin();
             ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
             CargarDatos();
-            //ClientScript.RegisterStartupScript(GetType(), "Idioma", "Idiomas('Ingles')", false);
-            //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cPersonaDatos.NOMBRE + "','3')", true);
-            //ClientScript.RegisterStartupScript(GetType(), "Variable", "", true);
-            //String idioma = "Turco,Romano,Haitiano,Español";
-            //String telefono = "1234-1236,1278-5691";
         }
 
         protected void CargarDatos() 
-        {
-            //String script1 = "InicioSesion";
-            //String script2 = "ImpIdiomas";
-            String script3 = "ImpTelefonos";
-            //Type sTipo = this.GetType();
-            //ClientScriptManager cs = Page.ClientScript;
-            
-            String idioma = "";
-            String telefono = "";
-
-            //String usuario = Request.QueryString["U"];
-            //String contrasena = Request.QueryString["P"];
-            //insMetodos.IniciarSesion(usuario, contrasena);
+        {   
             if (lblNombre.Text.Equals("Nombre")) 
             {
                 lblNombre.Text = cPersonaDatos.NOMBRE;
@@ -61,48 +43,24 @@ namespace CarteraEmpleo.Interfaz
                 }
                 cmbCondicion.Text = lblCondicion.Text;
             }
-
-            //String[] telefonos = insMetodos.ConsultaTelefonos(cPersonaDatos.CORREO);
-            //String[] telefonos = { "8914-2348", "8410-4507", "2460-1913" };
+            
             for (int i = 0; i < cPersonaDatos.TELEFONO.Length; i++)
             {
-                Label etiqueta = insInterfaz.CrearEtiqueta("telefono" + i.ToString(), "lblRegistrar", cPersonaDatos.TELEFONO[i]);
-                pnlTelefono.Controls.Add(etiqueta);
+                if (!cPersonaDatos.TELEFONO[i].Equals(""))
+                {
+                    Label etiqueta = insInterfaz.CrearEtiqueta("telefono" + i.ToString(), "lblRegistrar", cPersonaDatos.TELEFONO[i]);
+                    pnlTelefono.Controls.Add(etiqueta);
+                }
             }
 
             for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++)
             {
-                Label etiqueta = insInterfaz.CrearEtiqueta("idioma" + i.ToString(), "lblRegistrar", cPersonaDatos.IDIOMA[i]);
-                
-                pnlIdioma.Controls.Add(etiqueta);
-            }
-
-            //if (cPersonaDatos.IDIOMA != null) 
-            /*{
-                for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++)
+                if (!cPersonaDatos.IDIOMA[i].Equals(""))
                 {
-                    idioma += cPersonaDatos.IDIOMA[i] + ",";
-                }
-                if (!cs.IsStartupScriptRegistered(sTipo, script2))
-                {
-                    cs.RegisterStartupScript(sTipo, script2, "Idiomas('" + idioma + "')", true);
+                    Label etiqueta = insInterfaz.CrearEtiqueta("idioma" + i.ToString(), "lblRegistrar", cPersonaDatos.IDIOMA[i]);
+                    pnlIdioma.Controls.Add(etiqueta);
                 }
             }
-            if (cPersonaDatos.TELEFONO != null)
-            {
-                for (int i = 0; i < cPersonaDatos.TELEFONO.Length; i++)
-                {
-                    telefono += cPersonaDatos.TELEFONO[i] + ",";
-                }
-                if (!cs.IsStartupScriptRegistered(sTipo, script3))
-                {
-                    cs.RegisterStartupScript(sTipo, script3, "Telefonos('" + idioma + "')", true);
-                }
-            }*/
-            //if (!cs.IsStartupScriptRegistered(sTipo, script1))
-            //{
-            //    cs.RegisterStartupScript(sTipo, script1, "Sesion('" + cPersonaDatos.NOMBRE + "', '3')", true);
-            //}
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -126,8 +84,6 @@ namespace CarteraEmpleo.Interfaz
             {
                 imgError.Visible = true;
             }
-
-            //ScriptManager.RegisterStartupScript(btnGuardar, GetType(), "Idioma", "Idiomas('" + tmp + "')", true);
         }
 
         protected void hplNombre_Click(object sender, EventArgs e)
@@ -302,12 +258,32 @@ namespace CarteraEmpleo.Interfaz
 
         protected void AgregarTelefono_Click(object sender, EventArgs e)
         {
-
+            msgError.Text = insMetodos.InsertarTelefono(txtTelefono.Text);
+            if (msgError.Text.Equals(""))
+            {
+                cPersonaDatos.TELEFONO = insMetodos.ConsultaTelefonos(cPersonaDatos.CORREO);
+                imgError.Visible = false;
+            }
+            else
+            {
+                imgError.Visible = true;
+            }
+            txtTelefono.Text = "";
         }
 
         protected void AgregarIdioma_Click(object sender, EventArgs e)
         {
-
+            msgError.Text = insMetodos.InsertarIdioma(cmbIdioma.Text);
+            if (msgError.Text.Equals(""))
+            {
+                cPersonaDatos.IDIOMA = insMetodos.ConsultaIdiomas(cPersonaDatos.CORREO);
+                imgError.Visible = false;
+            }
+            else
+            {
+                imgError.Visible = true;
+            }
+            cmbIdioma.Text = "";
         }
 
         

@@ -35,7 +35,6 @@ namespace CarteraEmpleo.Clases
                 foreach (DataRow row in usuario.Rows)
                 {
                     if (row["TXT_ESTADO"].ToString().Equals("A"))
-                    //if (row["TXT_ESTADO"].ToString().Equals(""))
                     {
                         if (p_contrasena.Equals(row["TXT_CONTRASEÑA"].ToString()))
                         {
@@ -46,11 +45,12 @@ namespace CarteraEmpleo.Clases
                             {
                                 cEmpresaDatos.CEDJURIDICA = row["TXT_CED_JURIDICA"].ToString();
                                 cEmpresaDatos.CORREO = Site.USUARIO;
+                                cEmpresaDatos.CONTRASEÑA = row["TXT_CONTRASEÑA"].ToString();
                                 cEmpresaDatos.NOMBRE = row["TXT_NOMBRE"].ToString();
                                 cEmpresaDatos.PAGINA = row["TXT_PAG_WEB"].ToString();
                                 cEmpresaDatos.DESCRIPCION = row["TXT_DESC"].ToString();
                                 cEmpresaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
-                                //cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
+                                cEmpresaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
                                 Site.TIPO = 2;
                             }
                             else if (usuario.Columns.Contains("TXT_APELLIDO1"))
@@ -59,11 +59,12 @@ namespace CarteraEmpleo.Clases
                                                        row["TXT_APELLIDO1"].ToString() + " " +
                                                        row["TXT_APELLIDO2"].ToString();
                                 cPersonaDatos.CORREO = Site.USUARIO;
+                                cPersonaDatos.CONTRASEÑA = row["TXT_CONTRASEÑA"].ToString();
                                 cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
                                 cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
                                 cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
                                 cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
-                                //cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
+                                cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
                                 Site.TIPO = 3;
                             }
                             //else {
@@ -160,6 +161,15 @@ namespace CarteraEmpleo.Clases
             return Fragmentar(temp, separador);
         }
 
+        public void ModificarEstado(String usuario, char estado) 
+        {
+            try 
+            {
+                webservice.Update_Estado_Usuario(usuario, estado);
+            }
+            catch (Exception e) { }
+        }
+
         public Boolean ValidarTelefono(String telefono) 
         {
             String[] _sFracmentar;
@@ -231,7 +241,9 @@ namespace CarteraEmpleo.Clases
             Boolean respuesta;
             switch (accion) {
                 case 1:
+                    ModificarEstado(usuario, 'A');
                     return "Gracias por registrarse en nuestra Cartera de Empleos.";
+
                 case 2:
                     return "Se ha enviado un mensaje a su correo para confirmar su registro.";
                 case 4:
@@ -243,7 +255,7 @@ namespace CarteraEmpleo.Clases
                               "<p>Gracias por su registro de usuario en la Cartera de Empleos de Turísmo, su cuenta se encuentra lista para usarse.</p>" +
                               "<p>http://localhost:49367/Interfaz/Default.aspx</p>"; 
                     respuesta = insCorreo.Correo(usuario, "Administrador", "correo del administrador",
-                                                 asunto, mensaje, "Turismo.123", "archivo");
+                                                 asunto, mensaje, "Turismo.123", null);
                     break;
                 case 6:
                    // modificar el estado del usuario a activo(I)
@@ -252,7 +264,7 @@ namespace CarteraEmpleo.Clases
                               "<p>Lamentablemente su registro de usuario en la Cartera de Empleos de Turísmo no se pudo completar, le solicitamos que lo intente de nuevo en el enlace que aparece a continuación:</p>" +
                               "<p>http://localhost:49367/Interfaz/Default.aspx</p>"; 
                     respuesta = insCorreo.Correo(usuario, "Administrador", "correo del administrador",
-                                                 asunto, mensaje, "Turismo.123", "archivo");
+                                                 asunto, mensaje, "Turismo.123", null);
                     break;
             }
             return "";

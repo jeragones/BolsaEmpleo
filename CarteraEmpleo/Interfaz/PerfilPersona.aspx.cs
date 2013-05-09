@@ -42,5 +42,12 @@ namespace CarteraEmpleo.Interfaz
         {
             ClientScript.RegisterStartupScript(GetType(), "Quitaridiomas", "QuitarIdioma('idioma1')", true);
         }
+
+        protected void btnCorreo_Click(object sender, EventArgs e)
+        {
+            cCorreoComunicacion.DESTINATARIO = lblCorreo.Text;
+            cCorreoComunicacion.TIPO = 1;
+            Response.Redirect("~/Interfaz/Correo.aspx");
+        }
     }
 }
