@@ -122,17 +122,6 @@
 	float: left;
 }
 
-.Link
-{
-	color: #0033FF;
-	text-decoration: none;
-}
-
-	.Link:hover
-	{
-		color: #4A9586;
-	}
-
 .perfil {
 	border-width:10px;
 	border-radius: 10px 10px 10px 10px; 

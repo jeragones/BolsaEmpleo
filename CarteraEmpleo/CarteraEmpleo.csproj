@@ -65,6 +65,7 @@
   <ItemGroup>
     <Content Include="CSS\Buttons.css" />
     <Content Include="CSS\Images.css" />
+    <Content Include="CSS\Links.css" />
     <Content Include="CSS\sRegistrar.css" />
     <Content Include="CSS\style-news.css" />
     <Content Include="CSS\Styles.css" />

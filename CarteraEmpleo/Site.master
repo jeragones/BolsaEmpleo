@@ -11,6 +11,7 @@
         <link href="CSS/sRegistrar.css" rel="stylesheet" />
         <link href="CSS/Site.css" rel="stylesheet" />
         <link href="CSS/Tables.css" rel="stylesheet" />
+        <link href="CSS/Links.css" rel="stylesheet" />
         <link href="CSS/Buttons.css" rel="stylesheet" />
 
         <script type="text/javascript" src="/Scripts/jQueryDefault.js"></script>
@@ -43,7 +44,7 @@
                     <asp:TextBox class="txtLogin" ID="txtContrasena" TextMode="Password" Placeholder="Contraseña" runat="server" Height="15px" />
                     <asp:Button class="btn" ID="btnIniciarSesion" Text="Iniciar Sesión" runat="server" OnClick="btnIniciarSesion_Click" />
                     <asp:LinkButton ID="lnkNombre" CssClass="UsuarioLink" Visible="false" runat="server" OnClick="UsuarioLogin_Click"/>
-                    <asp:LinkButton ID="lnkCerrarSesion" CssClass="UsuarioLink" Text="Cerrar Sesión" Visible="false" runat="server" OnClick="CerrarSesion_Click" />
+                    <asp:LinkButton ID="lnkCerrarSesion" CssClass="UsuarioLink" Text="Cerrar" Visible="false" runat="server" OnClick="CerrarSesion_Click" />
                 </asp:Panel>
             </div>
             <asp:ContentPlaceHolder ID="Body" runat="server">

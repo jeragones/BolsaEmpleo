@@ -1,0 +1,29 @@
+﻿
+.Link{
+	color: #0033FF;
+	text-decoration: none;
+}
+
+	.Link:hover{
+		color: #4A9586;
+	}
+
+
+.UsuaruiLink{
+    position:absolute;
+    color: #C7C8BF;
+    font-size: larger;
+    text-decoration: none;
+}
+
+    .UsuarioLink:hover{
+        color: #0033FF;
+    }
+
+#lnkNombre{
+
+}
+
+#lnkCerrarSesion{
+
+}

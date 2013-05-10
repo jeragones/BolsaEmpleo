@@ -52,11 +52,6 @@ namespace CarteraEmpleo
             }
         }
 
-        protected void Buscar() 
-        {
-            txtCorreo.Text = "funciona";
-        }
-
         protected void UsuarioLogin_Click(object sender, EventArgs e) 
         {
             switch (TIPO)
