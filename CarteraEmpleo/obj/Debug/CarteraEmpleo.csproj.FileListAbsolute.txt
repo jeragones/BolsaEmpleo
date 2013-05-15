@@ -8,3 +8,8 @@ C:\Users\GeOrge\Documents\GitHub\BolsaEmpleo\CarteraEmpleo\bin\CarteraEmpleo.pdb
 C:\Users\GeOrge\Documents\GitHub\BolsaEmpleo\CarteraEmpleo\obj\Debug\CarteraEmpleo.csprojResolveAssemblyReference.cache
 C:\Users\GeOrge\Documents\GitHub\BolsaEmpleo\CarteraEmpleo\obj\Debug\CarteraEmpleo.dll
 C:\Users\GeOrge\Documents\GitHub\BolsaEmpleo\CarteraEmpleo\obj\Debug\CarteraEmpleo.pdb
+C:\Users\Jorge Arturo\Documents\GitHub\BolsaEmpleo\CarteraEmpleo\bin\CarteraEmpleo.dll
+C:\Users\Jorge Arturo\Documents\GitHub\BolsaEmpleo\CarteraEmpleo\bin\CarteraEmpleo.pdb
+C:\Users\Jorge Arturo\Documents\GitHub\BolsaEmpleo\CarteraEmpleo\obj\Debug\CarteraEmpleo.csprojResolveAssemblyReference.cache
+C:\Users\Jorge Arturo\Documents\GitHub\BolsaEmpleo\CarteraEmpleo\obj\Debug\CarteraEmpleo.dll
+C:\Users\Jorge Arturo\Documents\GitHub\BolsaEmpleo\CarteraEmpleo\obj\Debug\CarteraEmpleo.pdb

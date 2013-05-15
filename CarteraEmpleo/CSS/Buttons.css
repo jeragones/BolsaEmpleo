@@ -29,11 +29,19 @@
 }
 
 .btnAgregar {
-    background: url(../Images/agregar.png);
     width: 25px;
     height: 25px;
 }
     .btnAgregar:hover
+    {
+        cursor: pointer;
+    }
+
+.btnEliminar {
+    width: 25px;
+    height: 25px;
+}
+    .btnEliminar:hover
     {
         cursor: pointer;
     }

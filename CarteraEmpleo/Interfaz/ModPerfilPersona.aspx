@@ -53,9 +53,19 @@
                     <asp:Label class="lblRegistrar" runat="server" Text="Idioma(s):" />
                 </td>
                 <td class="tdleft">
-                    <asp:DropDownList ID="cmbIdioma" class="txt" runat="server"  Visible="False" Height="20px" Width="166px"/>&nbsp;
-                    <asp:Button ID="btnAgregarIdioma" CssClass="btnAgregar"  runat="server" onclick="AgregarIdioma_Click" Visible="false"/>
-                    <asp:Panel ID="pnlIdioma" runat="server"></asp:Panel>
+                    <asp:DropDownList ID="cmbIdioma" class="txt" runat="server"  Visible="False" Height="20px" Width="166px">
+                        <asp:ListItem>Alemán</asp:ListItem>
+                        <asp:ListItem>Español</asp:ListItem>
+                        <asp:ListItem>Francés</asp:ListItem>
+                        <asp:ListItem>Inglés</asp:ListItem>
+                        <asp:ListItem>Italiano</asp:ListItem>
+                        <asp:ListItem>Japonés</asp:ListItem>
+                        <asp:ListItem>Mandarín</asp:ListItem>
+                        <asp:ListItem>Portugués</asp:ListItem>
+                    </asp:DropDownList>
+                    &nbsp;
+                    <asp:ImageButton ID="AgregarIdioma" CssClass="btnAgregar" runat="server" ImageUrl="../Images/agregar.png" OnClick="AgregarIdioma_Click" Visible="false" />
+                    <asp:Panel ID="pnlIdioma" runat="server" Width="120px"></asp:Panel>
                     <div id="Idiomas" class="idiomas"></div> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
                 </td>
                 <td>

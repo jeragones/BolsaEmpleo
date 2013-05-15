@@ -23,7 +23,7 @@ namespace CarteraEmpleo.Interfaz
         }
 
         protected void CargarDatos() 
-        {   
+        {
             if (lblNombre.Text.Equals("Nombre")) 
             {
                 lblNombre.Text = cPersonaDatos.NOMBRE;
@@ -43,13 +43,14 @@ namespace CarteraEmpleo.Interfaz
                 }
                 cmbCondicion.Text = lblCondicion.Text;
             }
-            
             for (int i = 0; i < cPersonaDatos.TELEFONO.Length; i++)
             {
                 if (!cPersonaDatos.TELEFONO[i].Equals(""))
                 {
                     Label etiqueta = insInterfaz.CrearEtiqueta("telefono" + i.ToString(), "lblRegistrar", cPersonaDatos.TELEFONO[i]);
+                    ImageButton boton = insInterfaz.CrearImagen("Etelefono" + i.ToString(), "btnEliminar", "../Images/eliminar.png");
                     pnlTelefono.Controls.Add(etiqueta);
+                    pnlTelefono.Controls.Add(boton);
                 }
             }
 
@@ -58,7 +59,9 @@ namespace CarteraEmpleo.Interfaz
                 if (!cPersonaDatos.IDIOMA[i].Equals(""))
                 {
                     Label etiqueta = insInterfaz.CrearEtiqueta("idioma" + i.ToString(), "lblRegistrar", cPersonaDatos.IDIOMA[i]);
+                    ImageButton boton = insInterfaz.CrearImagen("Eidioma" + i.ToString(), "btnEliminar", "../Images/eliminar.png");
                     pnlIdioma.Controls.Add(etiqueta);
+                    pnlIdioma.Controls.Add(boton);
                 }
             }
         }
@@ -118,7 +121,7 @@ namespace CarteraEmpleo.Interfaz
         {
             cmbIdioma.Visible = true;
             hplIdioma.Visible = false;
-            btnAgregarIdioma.Visible = true;
+            AgregarIdioma.Visible = true;
             DesactivarNombre();
             DesactivarTelefono();
             DesactivarCondicion();
@@ -205,7 +208,7 @@ namespace CarteraEmpleo.Interfaz
         protected void DesactivarIdioma()
         {
             cmbIdioma.Visible = false;
-            btnAgregarIdioma.Visible = false;
+            AgregarIdioma.Visible = false;
             hplIdioma.Visible = true;
         }
 
@@ -273,7 +276,7 @@ namespace CarteraEmpleo.Interfaz
 
         protected void AgregarIdioma_Click(object sender, EventArgs e)
         {
-            msgError.Text = insMetodos.InsertarIdioma(cmbIdioma.Text);
+            msgError.Text = insMetodos.InsertarIdioma(cmbIdioma.SelectedIndex + 1);
             if (msgError.Text.Equals(""))
             {
                 cPersonaDatos.IDIOMA = insMetodos.ConsultaIdiomas(cPersonaDatos.CORREO);
@@ -283,7 +286,7 @@ namespace CarteraEmpleo.Interfaz
             {
                 imgError.Visible = true;
             }
-            cmbIdioma.Text = "";
+            cmbIdioma.Text = "Alemán";
         }
 
         

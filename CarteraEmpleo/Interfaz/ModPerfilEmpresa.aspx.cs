@@ -40,7 +40,6 @@ namespace CarteraEmpleo.Interfaz
             //Type sTipo = this.GetType();
             //ClientScriptManager cs = Page.ClientScript;
 
-            String telefono = "";
             char[] tmp = { '-' };
             String[] cedula = insMetodos.Fragmentar(cEmpresaDatos.CEDJURIDICA, tmp);
 
@@ -65,8 +64,8 @@ namespace CarteraEmpleo.Interfaz
                 txtDescripcion.Text = lblDescripcion.Text;
             }
 
-            //String[] telefonos = insMetodos.ConsultaTelefonos(cEmpresaDatos.CORREO); *****************************************************
-            String[] telefonos = {"8914-2348","8410-4507","2460-1913"};
+            String[] telefonos = insMetodos.ConsultaTelefonos(cEmpresaDatos.CORREO);
+            //String[] telefonos = {"8914-2348","8410-4507","2460-1913"};
             for (int i = 0; i < telefonos.Length; i++) 
             {
                 Label etiqueta = insInterfaz.CrearEtiqueta("telefono" + i.ToString(), "lblRegistrar", telefonos[i]);
