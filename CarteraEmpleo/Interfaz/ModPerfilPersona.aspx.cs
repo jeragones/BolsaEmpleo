@@ -251,7 +251,7 @@ namespace CarteraEmpleo.Interfaz
 
         protected void btnQuitarIdioma_Click(object sender, EventArgs e)
         {
-            String v = ClientScript.RegisterClientScriptBlock(this.GetType(),)
+            //String v = ClientScript.RegisterClientScriptBlock(this.GetType(),)
             String h = "";
             //DesactivarNombre();
             //DesactivarTelefono();
