@@ -58,22 +58,22 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.TextBox txbUbicación;
         
         /// <summary>
-        /// Control Label1.
+        /// Control txbSalarioMin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.TextBox txbSalarioMin;
         
         /// <summary>
-        /// Control txbSalario.
+        /// Control txbSalarioMax.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbSalario;
+        protected global::System.Web.UI.WebControls.TextBox txbSalarioMax;
         
         /// <summary>
         /// Control Puesto.

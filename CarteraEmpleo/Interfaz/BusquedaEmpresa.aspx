@@ -23,12 +23,20 @@
                     <asp:TextBox ID="txbUbicación" Class="txt" runat="server"  Height="20px" Width="200px" />
                 </td>
             </tr>
-             <tr>
+            <tr>
                 <td>
-                    <asp:Label ID="Label1" class="lblRegistrar" runat="server" Text="Salario:" />
+                    <asp:Label class="lblRegistrar" runat="server" Text="Salario Mínimo:" />
                 </td>
                 <td>
-                   <asp:TextBox ID="txbSalario" Class="txt" runat="server" Height="20px" Width="200px" />
+                   <asp:TextBox ID="txbSalarioMin" Class="txt" runat="server" Height="20px" Width="200px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label class="lblRegistrar" runat="server" Text="Salario Máximo:" />
+                </td>
+                <td>
+                   <asp:TextBox ID="txbSalarioMax" Class="txt" runat="server" Height="20px" Width="200px" />
                 </td>
             </tr>
             <tr>

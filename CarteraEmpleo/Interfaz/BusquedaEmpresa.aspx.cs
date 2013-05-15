@@ -16,7 +16,14 @@ namespace CarteraEmpleo.Interfaz
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            if (!txbNombre.Text.Equals("")) {
+            }
+            if (!txbUbicación.Text.Equals("")) {
+            }
+            if (!txbSalarioMin.Text.Equals("") && !txbSalarioMax.Text.Equals("")) {
+            }
+            if (!txbPuesto.Text.Equals("")) {
+            }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

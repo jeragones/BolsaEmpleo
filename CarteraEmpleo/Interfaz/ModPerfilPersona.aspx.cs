@@ -60,6 +60,7 @@ namespace CarteraEmpleo.Interfaz
                 {
                     Label etiqueta = insInterfaz.CrearEtiqueta("idioma" + i.ToString(), "lblRegistrar", cPersonaDatos.IDIOMA[i]);
                     ImageButton boton = insInterfaz.CrearImagen("Eidioma" + i.ToString(), "btnEliminar", "../Images/eliminar.png");
+                    boton.Click += new ImageClickEventHandler(btnQuitarIdioma_Click);
                     pnlIdioma.Controls.Add(etiqueta);
                     pnlIdioma.Controls.Add(boton);
                 }
@@ -250,13 +251,14 @@ namespace CarteraEmpleo.Interfaz
 
         protected void btnQuitarIdioma_Click(object sender, EventArgs e)
         {
+            String v = sender.GetType().Name;
+            String h = "";
             //DesactivarNombre();
             //DesactivarTelefono();
             //DesactivarIdioma();
             //DesactivarCondicion();
             //DesactivarContrasena();
             //DesactivarDireccion();
-            Response.Redirect("~/Interfaz/Default.aspx");
         }
 
         protected void AgregarTelefono_Click(object sender, EventArgs e)
@@ -272,6 +274,9 @@ namespace CarteraEmpleo.Interfaz
                 imgError.Visible = true;
             }
             txtTelefono.Text = "";
+            pnlTelefono.Controls.Clear();
+            pnlIdioma.Controls.Clear();
+            CargarDatos();
         }
 
         protected void AgregarIdioma_Click(object sender, EventArgs e)
@@ -287,12 +292,15 @@ namespace CarteraEmpleo.Interfaz
                 imgError.Visible = true;
             }
             cmbIdioma.Text = "Alemán";
+            pnlIdioma.Controls.Clear();
+            pnlTelefono.Controls.Clear();
+            CargarDatos();
         }
 
         
-    public static void ClosePage()
-    {
+        public static void ClosePage()
+        {
 
-    }
+        }
     }
 }

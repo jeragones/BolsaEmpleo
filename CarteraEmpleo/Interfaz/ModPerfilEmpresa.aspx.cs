@@ -35,17 +35,8 @@ namespace CarteraEmpleo.Interfaz
 
         protected void CargarDatos()
         {
-            //String script1 = "InicioSesion";
-            //String script3 = "ImpTelefonos";
-            //Type sTipo = this.GetType();
-            //ClientScriptManager cs = Page.ClientScript;
-
             char[] tmp = { '-' };
             String[] cedula = insMetodos.Fragmentar(cEmpresaDatos.CEDJURIDICA, tmp);
-
-            //String usuario = Request.QueryString["U"];
-            //String contrasena = Request.QueryString["P"];
-            //insMetodos.IniciarSesion(usuario, contrasena);
 
             if (lblNombre.Text.Equals("Nombre"))
             {
@@ -65,11 +56,12 @@ namespace CarteraEmpleo.Interfaz
             }
 
             String[] telefonos = insMetodos.ConsultaTelefonos(cEmpresaDatos.CORREO);
-            //String[] telefonos = {"8914-2348","8410-4507","2460-1913"};
             for (int i = 0; i < telefonos.Length; i++) 
             {
                 Label etiqueta = insInterfaz.CrearEtiqueta("telefono" + i.ToString(), "lblRegistrar", telefonos[i]);
+                ImageButton boton = insInterfaz.CrearImagen("Etelefono" + i.ToString(), "btnEliminar", "../Images/eliminar.png");
                 pnlTelefono.Controls.Add(etiqueta);
+                pnlTelefono.Controls.Add(boton);
             }
 
             /*if (!cs.IsStartupScriptRegistered(sTipo, script1))
