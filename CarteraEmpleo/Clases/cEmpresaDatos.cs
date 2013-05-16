@@ -20,6 +20,9 @@ namespace CarteraEmpleo
         Service1 webservice = new Service1();
         cGeneralMetodos insMetodos = new cGeneralMetodos();
 
+        /*
+         * Propiedades de la clase
+         */
         public static String CORREO;
         public static String CONTRASEÑA;
         public static String NOMBRE;
@@ -28,7 +31,10 @@ namespace CarteraEmpleo
         public static String DESCRIPCION;
         public static String[] TELEFONO;
         public static String DIRECCION;
-        // telefono
+
+        /*
+         * Metodo para insertar una nueva empresa a la BD
+         */
         public String insertar(String p_nombre, String p_contrasena1, String p_contrasena2,  String p_cedula, 
                                String p_correo, String p_sitio, string p_descripcion, string p_direccion)
         {
@@ -66,6 +72,9 @@ namespace CarteraEmpleo
             return ("");
         }
 
+        /*
+         * Metodo para modificar la empresa que se encuentra logueada
+         */
         public String Modificar(String p_nombre, String p_cedula, String p_sitio, 
                              String p_contrasena1, String p_contrasena2, String p_contrasena3,
                              String p_descripcion, String p_direccion)
@@ -112,6 +121,9 @@ namespace CarteraEmpleo
             }
         }
 
+        /*
+         * Metodo para cargar la informacion de la empresa actual de la BD
+         */
         public String[] PerfilEmpresa(String user)
         {
             String[] result = new String[7];
@@ -132,6 +144,9 @@ namespace CarteraEmpleo
             return result;
         }
 
+        /*
+         * Metodo que setea los valores de las propiedades de la clase
+         */
         public void consultaDatos(string correo)
         {
             string[] empresa = PerfilEmpresa(correo);

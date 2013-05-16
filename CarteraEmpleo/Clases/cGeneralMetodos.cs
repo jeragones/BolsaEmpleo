@@ -8,9 +8,15 @@ namespace CarteraEmpleo.Clases
 {
     public class cGeneralMetodos
     {
+        /*
+         * Instancias de otras clases
+         */
         Service1 webservice = new Service1();
         cCorreoComunicacion insCorreo = new cCorreoComunicacion();
 
+        /*
+         * Metodo que inicia sesion, inicializa las propiedades del usuario que inicio sesion
+         */
         public String IniciarSesion(String p_usuario, String p_contrasena)
         {
             /*string error = "";
@@ -89,6 +95,9 @@ namespace CarteraEmpleo.Clases
             return error;
         }
 
+        /*
+         * Metodo que identifica de que tipo de usuario es el que inicio sesion
+         */
         public String[] UsuarioLogin()
         {
             String[] usuario = {"",""};
@@ -110,6 +119,9 @@ namespace CarteraEmpleo.Clases
             return usuario;
         }
 
+        /*
+         * Metodo para insertar un nuevo idioma a una persona
+         */
         public String InsertarIdioma(int idioma)
         {
             try
@@ -123,6 +135,9 @@ namespace CarteraEmpleo.Clases
             }
         }
 
+        /*
+         * Metodo que inserta un nuevo telefono a un usuario
+         */
         public String InsertarTelefono(String telefono) {
             String msg = "";
             if (ValidarTelefono(telefono)) {
@@ -137,6 +152,9 @@ namespace CarteraEmpleo.Clases
             return msg;
         }
 
+        /*
+         * Metodo para consultar los idiomas asociados a una persona
+         */
         public String[] ConsultaIdiomas(String p_usuario) {
             DataTable idiomas = webservice.Select_Persona_Idioma(p_usuario);
             string temp = "";
@@ -148,6 +166,9 @@ namespace CarteraEmpleo.Clases
             return Fragmentar(temp,separador);
         }
 
+        /*
+         * Metodo para consultar los telefonos asociados a un usuairo
+         */
         public String[] ConsultaTelefonos(String p_usuario)
         {
             DataTable telefonos = webservice.Select_Telefono(p_usuario);
@@ -160,6 +181,9 @@ namespace CarteraEmpleo.Clases
             return Fragmentar(temp, separador);
         }
 
+        /*
+         * Metodo para modificar el estado de un usuario
+         */
         public void ModificarEstado(String usuario, char estado) 
         {
             try 
@@ -169,6 +193,9 @@ namespace CarteraEmpleo.Clases
             catch (Exception e) { }
         }
 
+        /*
+         * Metodo para validar que el formato de un telefono este bien escrito
+         */
         public Boolean ValidarTelefono(String telefono) 
         {
             String[] _sFracmentar;
@@ -188,6 +215,9 @@ namespace CarteraEmpleo.Clases
             }
         }
 
+        /*
+         * Metodo que valida que la contraseña sea correcta
+         */
         public Boolean ValidarContrasena(String pass1, String pass2) {
             if (pass1.Length >= 8)
             {
@@ -204,6 +234,9 @@ namespace CarteraEmpleo.Clases
             }
         }
 
+        /*
+         * Metodo para validar que una contraseña sea correcta
+         */
         public Boolean ValidarContrasena(String pass1, String pass2, String pass3)
         {
             if (!pass1.Equals(Site.CONTRASENA))
@@ -213,6 +246,9 @@ namespace CarteraEmpleo.Clases
             return ValidarContrasena(pass2, pass3);    
         }
 
+        /*
+         * Metodo para validar que le formato del correo este bien escrito
+         */
         public Boolean ValidarCorreo(String correo) {
             String[] _sFracmentar;
             char[] _cSepCorreo1 = { ' ',',','!','#','$','%','^','&','*','(',
@@ -235,6 +271,9 @@ namespace CarteraEmpleo.Clases
             return (false);
         }
 
+        /*
+         * Metodo para mostrar los mensajes luego de que un usuario se registra
+         */
         public String Registrar(String usuario, int accion) {
             String asunto, mensaje;
             Boolean respuesta;
@@ -269,12 +308,18 @@ namespace CarteraEmpleo.Clases
             return "";
         }
 
+        /*
+         * Metodo para fragmentar cadenas de caracteres
+         */
         public String[] Fragmentar(String p_cadena, char[] p_separador)
         {
             String[] vector = p_cadena.Split(p_separador);
             return vector;
         }
 
+        /*
+         * Metodo para validar si el valor de la variable es de tipo entero
+         */
         public Boolean Numero(String p_numero)
         {
             int _iNumero = 0;
