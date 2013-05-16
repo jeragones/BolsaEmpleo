@@ -138,7 +138,7 @@ namespace CarteraEmpleo
             }
             try
             {
-                webservice.Update_Persona(Site.USUARIO, Site.CONTRASENA, " ", p_direccion,
+                webservice.Update_Persona(CORREO, CONTRASEÑA, " ", p_direccion,
                                             _sNombre[0], _sNombre[1], _sNombre[2],
                                             _cCondicion, p_conocimientos);
                 return ("");
@@ -149,13 +149,9 @@ namespace CarteraEmpleo
             }
         }
 
-        public void eliminar()
-        {
-        }
-
         public String[] PerfilPersona(String user)
         {
-            String[] result = new String[5];
+            String[] result = new String[6];
             DataTable usuario = webservice.Select_Usuario(user);
             if (usuario.Columns.Count > 2)
             {
@@ -168,9 +164,23 @@ namespace CarteraEmpleo
                     result[2] = row["TXT_COND_LABORAL"].ToString();
                     result[3] = row["TXT_CONOCIMIENTOS"].ToString();
                     result[4] = row["DIR_DIRECCION"].ToString();
+                    result[5] = row["TXT_CONTRASEÑA"].ToString();
                 }
             }
             return result;
+        }
+
+        public void consultaDatos(string correo)
+        {
+            string[] persona = PerfilPersona(correo);
+            CORREO = persona[0];
+            NOMBRE = persona[1];
+            CONDICION = char.Parse(persona[2]);
+            EXPERIENCIA = persona[3];
+            DIRECCION = persona[4];
+            CONTRASEÑA = persona[5];
+            IDIOMA = insMetodos.ConsultaIdiomas(correo);
+            TELEFONO = insMetodos.ConsultaTelefonos(correo);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace CarteraEmpleo.Clases
          */
         public Boolean insertar(string p_NumJornada, string p_Horario, string p_Conocimientos, string p_Salario)
         {
-            string _Correo = Site.USUARIO;
+            string _Correo = cEmpresaDatos.CORREO; //Site.USUARIO;
             if(_Correo != ""){
                 if ( p_NumJornada != "" && p_Horario != "" && p_Conocimientos != "" && p_Salario != "")
                 {

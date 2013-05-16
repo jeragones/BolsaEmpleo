@@ -44,7 +44,7 @@ namespace CarteraEmpleo.Clases
                             if (usuario.Columns.Contains("TXT_CED_JURIDICA"))
                             {
                                 cEmpresaDatos.CEDJURIDICA = row["TXT_CED_JURIDICA"].ToString();
-                                cEmpresaDatos.CORREO = Site.USUARIO;
+                                cEmpresaDatos.CORREO = row["ID_CORREO"].ToString(); //Site.USUARIO;
                                 cEmpresaDatos.CONTRASEÑA = row["TXT_CONTRASEÑA"].ToString();
                                 cEmpresaDatos.NOMBRE = row["TXT_NOMBRE"].ToString();
                                 cEmpresaDatos.PAGINA = row["TXT_PAG_WEB"].ToString();
@@ -58,7 +58,7 @@ namespace CarteraEmpleo.Clases
                                 cPersonaDatos.NOMBRE = row["TXT_NOMBRE"].ToString() + " " +
                                                        row["TXT_APELLIDO1"].ToString() + " " +
                                                        row["TXT_APELLIDO2"].ToString();
-                                cPersonaDatos.CORREO = Site.USUARIO;
+                                cPersonaDatos.CORREO = row["ID_CORREO"].ToString();  //Site.USUARIO;
                                 cPersonaDatos.CONTRASEÑA = row["TXT_CONTRASEÑA"].ToString();
                                 cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
                                 cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();

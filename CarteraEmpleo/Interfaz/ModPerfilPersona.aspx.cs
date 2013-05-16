@@ -17,8 +17,8 @@ namespace CarteraEmpleo.Interfaz
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            String[] usuario = insMetodos.UsuarioLogin();
-            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
+            //String[] usuario = insMetodos.UsuarioLogin();
+            //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
             CargarDatos();
         }
 
@@ -26,6 +26,7 @@ namespace CarteraEmpleo.Interfaz
         {
             if (lblNombre.Text.Equals("Nombre")) 
             {
+                insPersona.consultaDatos(cPersonaDatos.CORREO);
                 lblNombre.Text = cPersonaDatos.NOMBRE;
                 txtNombre.Text = lblNombre.Text;
                 lblDireccion.Text = cPersonaDatos.DIRECCION;
@@ -266,7 +267,7 @@ namespace CarteraEmpleo.Interfaz
             msgError.Text = insMetodos.InsertarTelefono(txtTelefono.Text);
             if (msgError.Text.Equals(""))
             {
-                cPersonaDatos.TELEFONO = insMetodos.ConsultaTelefonos(cPersonaDatos.CORREO);
+                //cPersonaDatos.TELEFONO = insMetodos.ConsultaTelefonos(cPersonaDatos.CORREO);
                 imgError.Visible = false;
             }
             else
@@ -284,7 +285,7 @@ namespace CarteraEmpleo.Interfaz
             msgError.Text = insMetodos.InsertarIdioma(cmbIdioma.SelectedIndex + 1);
             if (msgError.Text.Equals(""))
             {
-                cPersonaDatos.IDIOMA = insMetodos.ConsultaIdiomas(cPersonaDatos.CORREO);
+                //cPersonaDatos.IDIOMA = insMetodos.ConsultaIdiomas(cPersonaDatos.CORREO);
                 imgError.Visible = false;
             }
             else

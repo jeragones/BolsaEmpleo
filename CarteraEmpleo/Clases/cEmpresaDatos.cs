@@ -96,13 +96,14 @@ namespace CarteraEmpleo
                 }
                 else
                 {
-                    Site.CONTRASENA = p_contrasena2;
+                    //Site.CONTRASENA = p_contrasena2;
+                    CONTRASEÑA = p_contrasena2;
                 }
             }
 
             try
             {
-                webservice.Update_Empresa(Site.USUARIO, Site.CONTRASENA, p_descripcion, p_direccion, 
+                webservice.Update_Empresa(CORREO, CONTRASEÑA, p_descripcion, p_direccion, 
                                           p_nombre, p_cedula, p_sitio /*, "True"*/);
                 return("");
             } 
@@ -111,13 +112,9 @@ namespace CarteraEmpleo
             }
         }
 
-        public void eliminar()
-        {
-        }
-
         public String[] PerfilEmpresa(String user)
         {
-            String[] result = new String[6];
+            String[] result = new String[7];
             DataTable usuario = webservice.Select_Usuario(user);
             if (usuario.Columns.Count > 2)
             {
@@ -129,9 +126,23 @@ namespace CarteraEmpleo
                     result[3] = row["TXT_PAG_WEB"].ToString();
                     result[4] = row["TXT_DESC"].ToString();
                     result[5] = row["DIR_DIRECCION"].ToString();
+                    result[6] = row["TXT_CONTRASEÑA"].ToString();
                 }
             }
             return result;
+        }
+
+        public void consultaDatos(string correo)
+        {
+            string[] empresa = PerfilEmpresa(correo);
+            CORREO = empresa[0];
+            CEDJURIDICA = empresa[1];
+            NOMBRE = empresa[2];
+            PAGINA = empresa[3];
+            DESCRIPCION = empresa[4];
+            DIRECCION = empresa[5];
+            CONTRASEÑA = empresa[6];
+            TELEFONO = insMetodos.ConsultaTelefonos(correo);
         }
     }
 }
