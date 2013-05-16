@@ -182,5 +182,26 @@ namespace CarteraEmpleo
             IDIOMA = insMetodos.ConsultaIdiomas(correo);
             TELEFONO = insMetodos.ConsultaTelefonos(correo);
         }
+
+        public List<string[]> buscarPersona(string idioma, string condicion, string direccion, string conocimientos) {
+            string[] persona = new string[2]; 
+            List<string[]> lista = new List<string[]>();
+            char tmp;
+            if (condicion.Equals("Desempleado"))
+                tmp = 'D';
+            else
+                tmp = 'E';
+
+            DataTable candidatos = webservice.Buscar_Personas(idioma, tmp, direccion, conocimientos);
+            foreach (DataRow row in candidatos.Rows)
+            {
+                persona[0] = row["ID_CORREO"].ToString();
+                persona[1] = row["TXT_NOMBRE"].ToString() + " " +
+                             row["TXT_APELLIDO1"].ToString() + " " +
+                             row["TXT_APELLIDO2"].ToString();
+                lista.Add(persona);
+            }
+            return lista;
+        }
     }
 }
