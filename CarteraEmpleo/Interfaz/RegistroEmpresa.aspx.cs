@@ -27,7 +27,7 @@ using CarteraEmpleo.Clases;
         {
             
             String _sCedula = txtCedula1.Text + "-" + txtCedula2.Text + "-" + txtCedula3.Text;
-            msgError.Text = insEmpresa.insertar(txtNombre.Text, txtContrasena.Text, txtContrasena.Text, _sCedula, txtCorreo.Text, txtWeb.Text);
+            msgError.Text = insEmpresa.insertar(txtNombre.Text, txtContrasena.Text, txtContrasena.Text, _sCedula, txtCorreo.Text, txtWeb.Text, txtDescripcion.Text, txtDireccion.Text);
             if (msgError.Text.Equals(""))
             {
                 insMetodos.ModificarEstado(txtCorreo.Text, 'I');
@@ -112,8 +112,8 @@ using CarteraEmpleo.Clases;
                                         "</td>" +
                                     "</tr>" +
                                  "</table>";
-                Boolean respuesta = insCorreo.Correo("turismo.empleos@gmail.com", "Cartera de Empleo de Turísmo", txtCorreo.Text,
-                                                     asunto, mensaje, txtContrasena.Text, null);
+                Boolean respuesta = insCorreo.Correo("turismo.empleos@gmail.com", "Cartera de Empleo de Turísmo", "turismo.empleos@gmail.com"/*txtCorreo.Text*/,
+                                                     asunto, mensaje, "Turismo.123"/*txtContrasena.Text*/, null);
                 Limpiar();
                 Response.Redirect("~/Interfaz/CompletarRegistro.aspx?T=4");
             }

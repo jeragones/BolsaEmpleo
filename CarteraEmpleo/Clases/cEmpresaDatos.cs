@@ -30,7 +30,7 @@ namespace CarteraEmpleo
         public static String DIRECCION;
         // telefono
         public String insertar(String p_nombre, String p_contrasena1, String p_contrasena2,  String p_cedula, 
-                               String p_correo, String p_sitio)
+                               String p_correo, String p_sitio, string p_descripcion, string p_direccion)
         {
             String[] _sFracmentar;
             char[] _cSeparadorCedula = { '-' };
@@ -58,7 +58,7 @@ namespace CarteraEmpleo
 
             try
             {
-                webservice.Insert_Empresa(p_correo, p_contrasena1, "", "", p_nombre, p_cedula, p_sitio);
+                webservice.Insert_Empresa(p_correo, p_contrasena1, p_descripcion, p_direccion, p_nombre, p_cedula, p_sitio);
             }
             catch (Exception e) { 
                 return("Error en el registro.");
