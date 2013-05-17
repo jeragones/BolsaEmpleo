@@ -34,9 +34,7 @@
                     <ul>
                         <li><a href="Default.aspx">Inicio</a></li>
                         <!--<li><a href="Default.aspx">Perfil</a></li>-->
-                        <li><a href="Default.aspx">Buscar</a></li>
-                        <li><a href="Default.aspx">Contactar</a></li>
-                        <li><a href="Default.aspx">Acerca</a></li>
+                        <li><a href="CompletarRegistro.aspx?T=7">Buscar</a></li>
                     </ul>
                 </nav>
                 <asp:Panel ID="pnlLogin" CssClass="login" runat="server">

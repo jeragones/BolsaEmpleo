@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="BusquedaPersona.aspx.cs" Inherits="CarteraEmpleo.Interfaz.BusquedaPersona" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="BusquedaPersona.aspx.cs" Inherits="CarteraEmpleo.Interfaz.BusquedaPersona" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 </asp:Content>
@@ -60,6 +60,21 @@
                 </td>
             </tr>
             <tr>
+                <td colspan="2">
+                    Resultados:
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <asp:Label ID="msgResultado" class="lblRegistrar" runat="server" Text="No se encontraron resultados." Visible="false" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <asp:Panel ID="panel" runat="server" CssClass="pnl"></asp:Panel>
+                </td>
+            </tr>
+            <!--<tr>
                 <td class="tdleft" colspan="2">
                     <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True" DataKeyNames="#">
                         <Columns>
@@ -67,8 +82,7 @@
                         </Columns>
                     </asp:GridView>
                 </td>
-            </tr>
+            </tr>-->
         </table>
-
     </div>
 </asp:Content>

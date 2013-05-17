@@ -159,5 +159,23 @@ namespace CarteraEmpleo
             CONTRASEÑA = empresa[6];
             TELEFONO = insMetodos.ConsultaTelefonos(correo);
         }
+
+        public List<string[]> buscarEmpresa(string nombre, string direccion, string puesto, string salarioMin, string salarioMax)
+        {
+            string[] empresa = new string[2];
+            List<string[]> lista = new List<string[]>();
+
+            if (insMetodos.Numero(salarioMin) & insMetodos.Numero(salarioMax)) {
+                DataTable empresas = webservice.Buscar_PUBLICACIONES(nombre, direccion, puesto, Convert.ToInt32(salarioMin), Convert.ToInt32(salarioMax));
+                foreach (DataRow row in empresas.Rows)
+                {
+                    empresa[0] = row["ID_CORREO"].ToString();
+                    empresa[1] = row["TXT_NOMBRE"].ToString();
+                    lista.Add(empresa);
+                }
+            }
+            
+            return lista;
+        }
     }
 }

@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CarteraEmpleo.Clases;
 
 namespace CarteraEmpleo.Interfaz
 {
     public partial class BusquedaEmpresa : System.Web.UI.Page
     {
+        cEmpresaDatos insEmpresa = new cEmpresaDatos();
+        cInterfaz insInterfaz = new cInterfaz();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,13 +20,28 @@ namespace CarteraEmpleo.Interfaz
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (!txbNombre.Text.Equals("")) {
+            List<string[]> lista = insEmpresa.buscarEmpresa(txbNombre.Text, txbUbicación.Text, txbPuesto.Text, txbSalarioMin.Text, txbSalarioMax.Text);
+            if (lista != null)
+            {
+                if (lista.Count > 0)
+                {
+                    msgResultado.Visible = false;
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        Button boton = insInterfaz.CrearBoton(lista.ElementAt(i)[0], "btnResultado", lista.ElementAt(i)[1]);
+                        panel.Controls.Add(boton);
+                    }
+                }
+                else {
+                    msgResultado.Visible = true;
+                }
+                
+                msgError.Visible = false;
             }
-            if (!txbUbicación.Text.Equals("")) {
-            }
-            if (!txbSalarioMin.Text.Equals("") && !txbSalarioMax.Text.Equals("")) {
-            }
-            if (!txbPuesto.Text.Equals("")) {
+            else
+            {
+                msgError.Text = "Existen campos con valores incorrectos.";
+                msgError.Visible = true;
             }
         }
 

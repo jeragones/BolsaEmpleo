@@ -184,7 +184,8 @@ namespace CarteraEmpleo
         }
 
         public List<string[]> buscarPersona(string idioma, string condicion, string direccion, string conocimientos) {
-            string[] persona = new string[2]; 
+            string[] persona = new string[2];
+            string[] persona1 = new string[2]; 
             List<string[]> lista = new List<string[]>();
             char tmp;
             if (condicion.Equals("Desempleado"))
@@ -192,7 +193,7 @@ namespace CarteraEmpleo
             else
                 tmp = 'E';
 
-            DataTable candidatos = webservice.Buscar_Personas(idioma, tmp, direccion, conocimientos);
+            DataTable candidatos = webservice.Buscar_Personas(idioma, tmp, direccion, conocimientos/*,0,""*/);
             foreach (DataRow row in candidatos.Rows)
             {
                 persona[0] = row["ID_CORREO"].ToString();
@@ -201,6 +202,14 @@ namespace CarteraEmpleo
                              row["TXT_APELLIDO2"].ToString();
                 lista.Add(persona);
             }
+
+            //persona[0] = "jeragones@gmail.com";
+            //persona[1] = "Jorge Rojas Aragonés";
+            //lista.Add(persona);
+            //persona1[0] = "osa@gmail.com";
+            //persona1[1] = "Daniel Murillo";
+            //lista.Add(persona1);
+
             return lista;
         }
     }

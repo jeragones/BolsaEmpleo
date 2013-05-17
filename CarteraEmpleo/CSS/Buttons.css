@@ -45,3 +45,24 @@
     {
         cursor: pointer;
     }
+
+.btnResultado {
+    position:relative;
+    top: 10px;
+    width: 370px;
+    height: 40px;
+    background: -webkit-linear-gradient(#007138, #005329);
+    font-weight:bold;
+    color:#FFFFFF;
+    border-color: #FCFCFC;
+    border:solid;
+    border-radius: 3px;
+}
+
+    .btnResultado:hover {
+        margin-bottom: 5px;
+        margin-top:5px;
+        border-radius: 3px;
+        border:none;
+        font-size:medium;
+    }
