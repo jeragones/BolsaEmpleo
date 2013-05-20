@@ -130,5 +130,9 @@ namespace CarteraEmpleo
                 return true;
             }
         }
+
+        public int Tipo() {
+            return TIPO;
+        }
     }
 }

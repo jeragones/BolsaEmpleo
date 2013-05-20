@@ -308,6 +308,10 @@ namespace CarteraEmpleo.Clases
             return "";
         }
 
+        public int BuscarUsuario() {
+            return Site.TIPO;
+        }
+
         /*
          * Metodo para fragmentar cadenas de caracteres
          */

@@ -18,7 +18,23 @@ namespace CarteraEmpleo.Interfaz
         {
             String accion = Request.QueryString["T"];
             String usuario = Request.QueryString["U"];
-            lblMensaje.Text = insMetodos.Registrar(usuario, Convert.ToInt32(accion));
+            if (accion.Equals("7"))
+            {
+                int x = insMetodos.BuscarUsuario();
+                if (x == 2)
+                {
+                    Response.Redirect("~/Interfaz/BusquedaPersona.aspx");
+                }
+                else if (x == 3)
+                {
+                    Response.Redirect("~/Interfaz/BusquedaEmpresa.aspx");
+                }
+                // llamar buscar candidato o empresa dependiendo de quien este logueado
+            }
+            else {
+                lblMensaje.Text = insMetodos.Registrar(usuario, Convert.ToInt32(accion));
+            }
+            
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
