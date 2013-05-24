@@ -38,7 +38,10 @@ namespace CarteraEmpleo
                 btnIniciarSesion.Visible = false;
                 lnkCerrarSesion.Visible = true;
                 lnkNombre.Visible = true;
-                lnkNombre.Text = cPersonaDatos.NOMBRE;
+                if(TIPO==3)
+                    lnkNombre.Text = cPersonaDatos.NOMBRE;
+                if (TIPO == 2)
+                    lnkNombre.Text = cEmpresaDatos.NOMBRE;
             }
             else
             {

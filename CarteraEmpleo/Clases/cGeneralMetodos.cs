@@ -19,7 +19,7 @@ namespace CarteraEmpleo.Clases
          */
         public String IniciarSesion(String p_usuario, String p_contrasena)
         {
-            string error = "";
+            //string error = "";
             //cPersonaDatos.NOMBRE = "Jorge Rojas Aragonés";
             //cPersonaDatos.CORREO = "jeragones@gmail.com";
             //cPersonaDatos.CONDICION = 'D';
