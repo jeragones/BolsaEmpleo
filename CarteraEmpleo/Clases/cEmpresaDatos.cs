@@ -59,7 +59,7 @@ namespace CarteraEmpleo
 
             if (insMetodos.ValidarContrasena(p_contrasena1, p_contrasena2))
             {
-                return ("Las contraseñas no coinciden.");
+                return ("Contraseña inválida.");
             }
 
             try

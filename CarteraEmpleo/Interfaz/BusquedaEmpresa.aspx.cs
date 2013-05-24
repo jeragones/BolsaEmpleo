@@ -29,6 +29,7 @@ namespace CarteraEmpleo.Interfaz
                     for (int i = 0; i < lista.Count; i++)
                     {
                         Button boton = insInterfaz.CrearBoton(lista.ElementAt(i)[0], "btnResultado", lista.ElementAt(i)[1]);
+                        boton.Click += new EventHandler(btnEventoPerfil_Click);
                         panel.Controls.Add(boton);
                     }
                 }
@@ -45,9 +46,10 @@ namespace CarteraEmpleo.Interfaz
             }
         }
 
-        protected void btnCancelar_Click(object sender, EventArgs e)
+        protected void btnEventoPerfil_Click(object sender, EventArgs e)
         {
-
+            ImageButton boton = (ImageButton)sender;
+            Response.Redirect("~/Interfaz/PerfilEmpresa.aspx?U=" + boton.ID);
         }
     }
 }

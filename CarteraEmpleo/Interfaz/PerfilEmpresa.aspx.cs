@@ -19,11 +19,12 @@ using CarteraEmpleo;
 
          protected void Page_Load(object sender, EventArgs e)
          {
-             ClientScriptManager cs = Page.ClientScript;
-             String[] usuario = insMetodos.UsuarioLogin();
-             ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
-
-             String[] empresa = insEmpresa.PerfilEmpresa("empresa@gmail.com");
+             //ClientScriptManager cs = Page.ClientScript;
+             //String[] usuario = insMetodos.UsuarioLogin();
+             //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
+             String usuario = Request.QueryString["U"];
+             
+             String[] empresa = insEmpresa.PerfilEmpresa(usuario);
 
              lblCorreo.Text = empresa[0];
              lblCedula.Text = empresa[1];

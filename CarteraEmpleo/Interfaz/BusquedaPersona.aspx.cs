@@ -33,12 +33,19 @@ namespace CarteraEmpleo.Interfaz
                 for (int i = 0; i < lista.Count; i++)
                 {
                     Button boton = insInterfaz.CrearBoton(lista.ElementAt(i)[0], "btnResultado", lista.ElementAt(i)[1]);
+                    boton.Click += new EventHandler(btnEventoPerfil_Click);
                     panel.Controls.Add(boton);
                 }
             }
             else {
                 msgResultado.Visible = true;
             }
+        }
+
+        protected void btnEventoPerfil_Click(object sender, EventArgs e)
+        {
+            ImageButton boton = (ImageButton)sender;
+            Response.Redirect("~/Interfaz/PerfilPersona.aspx?U=" + boton.ID);
         }
     }
 }

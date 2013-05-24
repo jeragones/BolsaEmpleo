@@ -56,11 +56,10 @@
             <tr>
                 <td>
                     <br/>
-                    <asp:Button class="btn" runat="server" Text="Buscar" ID="btnBuscar" OnClick="btnBuscar_Click" />
                 </td>
                 <td>
+                    <asp:Button class="btn" runat="server" Text="Buscar" ID="btnBuscar" OnClick="btnBuscar_Click" />
                     <br/>
-                    <asp:Button class="btn" runat="server" Text="Cancelar" ID="btnCancelar" NavigateUrl="~/Default.aspx" OnClick="btnCancelar_Click" />
                 </td>
             </tr>
             <tr>

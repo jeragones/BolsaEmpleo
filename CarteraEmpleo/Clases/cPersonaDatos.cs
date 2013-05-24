@@ -48,7 +48,7 @@ namespace CarteraEmpleo
 
             if(insMetodos.ValidarContrasena(p_contrasena1, p_contrasena2))
             {
-                return ("Las contraseñas no coinciden.");
+                return ("Contraseña inválida.");
             }
             
             char _cCondicion = ' ';
@@ -149,24 +149,52 @@ namespace CarteraEmpleo
             }
         }
 
+        public void eliminarIdioma(string id, string correo) {
+            char[] separador = { 'B' };
+            string[] nombre = insMetodos.Fragmentar(id, separador);
+
+            try {
+                //webservice.Delete_Persona_Idioma(correo, 1);
+            } catch (Exception e) { }
+        }
+
+        public void eliminarTelefono(string id, string correo)
+        {
+            char[] separador = { 'B' };
+            string[] nombre = insMetodos.Fragmentar(id, separador);
+
+            try
+            {
+                //webservice.Delete_Telefono(1,correo);
+            }
+            catch (Exception e) { }
+        }
+
         public String[] PerfilPersona(String user)
         {
             String[] result = new String[6];
-            DataTable usuario = webservice.Select_Usuario(user);
-            if (usuario.Columns.Count > 2)
-            {
-                foreach (DataRow row in usuario.Rows)
-                {
-                    result[0] = row["ID_CORREO"].ToString();
-                    result[1] = row["TXT_NOMBRE"].ToString() + " " +
-                                row["TXT_APELLIDO1"].ToString() + " " +
-                                row["TXT_APELLIDO2"].ToString();
-                    result[2] = row["TXT_COND_LABORAL"].ToString();
-                    result[3] = row["TXT_CONOCIMIENTOS"].ToString();
-                    result[4] = row["DIR_DIRECCION"].ToString();
-                    result[5] = row["TXT_CONTRASEÑA"].ToString();
-                }
-            }
+            result[0] = "jeragones@gmail.com";
+            result[1] = "Jorge Rojas Aragonés";
+            result[2] = "D";
+            result[3] = "25 años coordinador";
+            result[4] = "Sucre, San Carlos";
+            result[5] = "12345678";
+            
+            //DataTable usuario = webservice.Select_Usuario(user);
+            //if (usuario.Columns.Count > 2)
+            //{
+            //    foreach (DataRow row in usuario.Rows)
+            //    {
+            //        result[0] = row["ID_CORREO"].ToString();
+            //        result[1] = row["TXT_NOMBRE"].ToString() + " " +
+            //                    row["TXT_APELLIDO1"].ToString() + " " +
+            //                    row["TXT_APELLIDO2"].ToString();
+            //        result[2] = row["TXT_COND_LABORAL"].ToString();
+            //        result[3] = row["TXT_CONOCIMIENTOS"].ToString();
+            //        result[4] = row["DIR_DIRECCION"].ToString();
+            //        result[5] = row["TXT_CONTRASEÑA"].ToString();
+            //    }
+            //}
             return result;
         }
 
@@ -179,8 +207,8 @@ namespace CarteraEmpleo
             EXPERIENCIA = persona[3];
             DIRECCION = persona[4];
             CONTRASEÑA = persona[5];
-            IDIOMA = insMetodos.ConsultaIdiomas(correo);
-            TELEFONO = insMetodos.ConsultaTelefonos(correo);
+            //IDIOMA = insMetodos.ConsultaIdiomas(correo);
+            //TELEFONO = insMetodos.ConsultaTelefonos(correo);
         }
 
         public List<string[]> buscarPersona(string idioma, string condicion, string direccion, string conocimientos) {

@@ -16,11 +16,12 @@ namespace CarteraEmpleo.Interfaz
          protected void Page_Load(object sender, EventArgs e)
          {
 
-             ClientScriptManager cs = Page.ClientScript;
-             String[] usuario = insMetodos.UsuarioLogin();
-             ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true); 
-
-             String[] persona = insPersona.PerfilPersona("jeragones@gmail.com");
+             //ClientScriptManager cs = Page.ClientScript;
+             //String[] usuario = insMetodos.UsuarioLogin();
+             //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true); 
+             String usuario = Request.QueryString["U"];
+             
+             String[] persona = insPersona.PerfilPersona(usuario);
 
              lblCorreo.Text = persona[0];
              lblNombre.Text = persona[1];

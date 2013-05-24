@@ -48,8 +48,9 @@ namespace CarteraEmpleo.Interfaz
             {
                 if (!cPersonaDatos.TELEFONO[i].Equals(""))
                 {
-                    Label etiqueta = insInterfaz.CrearEtiqueta("telefono" + i.ToString(), "lblRegistrar", cPersonaDatos.TELEFONO[i]);
-                    ImageButton boton = insInterfaz.CrearImagen("Etelefono" + i.ToString(), "btnEliminar", "../Images/eliminar.png");
+                    Label etiqueta = insInterfaz.CrearEtiqueta(cPersonaDatos.TELEFONO[i] + "L", "lblRegistrar", cPersonaDatos.TELEFONO[i]);
+                    ImageButton boton = insInterfaz.CrearImagen(cPersonaDatos.TELEFONO[i] + "B", "btnEliminar", "../Images/eliminar.png");
+                    boton.Click += new ImageClickEventHandler(btnQuitarTelefono_Click);
                     pnlTelefono.Controls.Add(etiqueta);
                     pnlTelefono.Controls.Add(boton);
                 }
@@ -250,19 +251,22 @@ namespace CarteraEmpleo.Interfaz
             hplExperiencia.Visible = true;
         }
 
+        protected void btnQuitarTelefono_Click(object sender, EventArgs e)
+        {
+            ImageButton boton = (ImageButton)sender;
+            int index = pnlTelefono.Controls.IndexOf(boton);
+            insPersona.eliminarTelefono(boton.ID, cPersonaDatos.CORREO);
+            pnlTelefono.Controls.Remove(boton);
+            pnlTelefono.Controls.RemoveAt(index - 1);
+        }
+
         protected void btnQuitarIdioma_Click(object sender, EventArgs e)
         {
-            Button boton = (Button)sender;
-            string id = boton.ID;
-
-            //String v = ClientScript.RegisterClientScriptBlock(this.GetType(),)
-            String h = "";
-            //DesactivarNombre();
-            //DesactivarTelefono();
-            //DesactivarIdioma();
-            //DesactivarCondicion();
-            //DesactivarContrasena();
-            //DesactivarDireccion();
+            ImageButton boton = (ImageButton)sender;
+            int index = pnlIdioma.Controls.IndexOf(boton);
+            insPersona.eliminarIdioma(boton.ID, cPersonaDatos.CORREO);
+            pnlIdioma.Controls.Remove(boton);
+            pnlIdioma.Controls.RemoveAt(index-1);
         }
 
         protected void AgregarTelefono_Click(object sender, EventArgs e)
