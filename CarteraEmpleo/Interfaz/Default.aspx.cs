@@ -22,21 +22,21 @@ namespace CarteraEmpleo
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            String[] usuario = insMetodos.UsuarioLogin();
-            String script = "InicioSesion";
-            Type sTipo = this.GetType();
+            //String[] usuario = insMetodos.UsuarioLogin();
+            //String script = "InicioSesion";
+            //Type sTipo = this.GetType();
 
-            ClientScriptManager cs = Page.ClientScript;
-            if (!cs.IsStartupScriptRegistered(sTipo, script)) 
-            {
-                cs.RegisterStartupScript(sTipo, script, "Sesion('" + usuario[0] + "', '" + usuario[1] + "')", true);
-            }
+            //ClientScriptManager cs = Page.ClientScript;
+            //if (!cs.IsStartupScriptRegistered(sTipo, script)) 
+            //{
+            //    cs.RegisterStartupScript(sTipo, script, "Sesion('" + usuario[0] + "', '" + usuario[1] + "')", true);
+            //}
             //if (!cs.IsClientScriptBlockRegistered(sTipo, script)) 
             //{
  
             //}
             //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "', '"+ usuario[1] +"')", true);
-            if (!usuario[0].Equals(""))
+            if (insMetodos.BuscarUsuario()!=0)
             {
                 //Response.Redirect("~/Interfaz/Default.aspx");
                 btnRegEmpresa.Visible = false;

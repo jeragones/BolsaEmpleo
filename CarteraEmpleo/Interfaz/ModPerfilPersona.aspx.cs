@@ -59,8 +59,8 @@ namespace CarteraEmpleo.Interfaz
             {
                 if (!cPersonaDatos.IDIOMA[i].Equals(""))
                 {
-                    Label etiqueta = insInterfaz.CrearEtiqueta("idioma" + i.ToString(), "lblRegistrar", cPersonaDatos.IDIOMA[i]);
-                    ImageButton boton = insInterfaz.CrearImagen("Eidioma" + i.ToString(), "btnEliminar", "../Images/eliminar.png");
+                    Label etiqueta = insInterfaz.CrearEtiqueta(cPersonaDatos.IDIOMA[i] + "L", "lblRegistrar", cPersonaDatos.IDIOMA[i]);
+                    ImageButton boton = insInterfaz.CrearImagen(cPersonaDatos.IDIOMA[i] + "B", "btnEliminar", "../Images/eliminar.png");
                     boton.Click += new ImageClickEventHandler(btnQuitarIdioma_Click);
                     pnlIdioma.Controls.Add(etiqueta);
                     pnlIdioma.Controls.Add(boton);
@@ -252,6 +252,9 @@ namespace CarteraEmpleo.Interfaz
 
         protected void btnQuitarIdioma_Click(object sender, EventArgs e)
         {
+            Button boton = (Button)sender;
+            string id = boton.ID;
+
             //String v = ClientScript.RegisterClientScriptBlock(this.GetType(),)
             String h = "";
             //DesactivarNombre();
@@ -267,7 +270,6 @@ namespace CarteraEmpleo.Interfaz
             msgError.Text = insMetodos.InsertarTelefono(txtTelefono.Text);
             if (msgError.Text.Equals(""))
             {
-                //cPersonaDatos.TELEFONO = insMetodos.ConsultaTelefonos(cPersonaDatos.CORREO);
                 imgError.Visible = false;
             }
             else
@@ -285,7 +287,6 @@ namespace CarteraEmpleo.Interfaz
             msgError.Text = insMetodos.InsertarIdioma(cmbIdioma.SelectedIndex + 1);
             if (msgError.Text.Equals(""))
             {
-                //cPersonaDatos.IDIOMA = insMetodos.ConsultaIdiomas(cPersonaDatos.CORREO);
                 imgError.Visible = false;
             }
             else

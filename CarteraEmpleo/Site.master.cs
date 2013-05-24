@@ -89,15 +89,17 @@ namespace CarteraEmpleo
                 btnIniciarSesion.Visible = false;
                 lnkCerrarSesion.Visible = true;
                 lnkNombre.Visible = true;
-                lnkNombre.Text = cPersonaDatos.NOMBRE;
                 switch (TIPO)
                 {
                     case 1:
+                        lnkNombre.Text = "Administrador";
                         break;
                     case 2:
+                        lnkNombre.Text = cEmpresaDatos.NOMBRE;
                         Response.Redirect("~/Interfaz/ModPerfilEmpresa.aspx");
                         break;
                     case 3:
+                        lnkNombre.Text = cPersonaDatos.NOMBRE;
                         Response.Redirect("~/Interfaz/ModPerfilPersona.aspx");
                         break;
                 }
