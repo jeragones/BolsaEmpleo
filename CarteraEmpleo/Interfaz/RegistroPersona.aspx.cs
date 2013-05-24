@@ -35,8 +35,8 @@ using CarteraEmpleo.Clases;
                 String mensaje = "<p>Buenos días "+ txtNombre.Text + "</p>" +
                                  "<p>Gracias por su registro de usuario en la Cartera de Empleos de Turísmo, para completar su registro ingrese al enlace que aparece a continuación: </p>" +
                                  "<p>http://localhost:49367/Interfaz/CompletarRegistro.aspx?U=" + txtCorreo.Text + "&T=1</p>";
-                Boolean respuesta = insCorreo.Correo(txtCorreo.Text, "Administrador", "turismo.empleos@gmail.com", 
-                                                     asunto, mensaje, "Contrasena", null);
+                Boolean respuesta = insCorreo.Correo(txtCorreo.Text, "Administrador", "turismo.empleos@gmail.com",
+                                                     asunto, mensaje, "Turismo.123", null);
                 Limpiar();
                 Response.Redirect("~/Interfaz/CompletarRegistro.aspx?T=2");
             }
