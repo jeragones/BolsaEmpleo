@@ -264,7 +264,7 @@ namespace CarteraEmpleo.Clases
             {
                 return(true);
             }
-            if (_sFracmentar[0].Equals("") | _sFracmentar[1].Equals("") | _sFracmentar[2].Equals(""))
+            if (_sFracmentar[0].Equals("") | _sFracmentar[1].Equals(""))
             {
                 return (true);
             }
