@@ -253,14 +253,14 @@ namespace CarteraEmpleo.Clases
             String[] _sFracmentar;
             char[] _cSepCorreo1 = { ' ',',','!','#','$','%','^','&','*','(',
                                             ')','+','/',';',':','"','/' };
-            char[] _cSepCorreo2 = { '@', '.' }; // arreglar lo del punto del correo
+            char[] _cSepCorreo2 = { '@' }; // arreglar lo del punto del correo
             _sFracmentar = Fragmentar(correo, _cSepCorreo1);
             if (_sFracmentar.Length > 1)
             {
                 return(true);
             }
             _sFracmentar = Fragmentar(correo, _cSepCorreo2);
-            if (_sFracmentar.Length != 3)
+            if (_sFracmentar.Length != 2)
             {
                 return(true);
             }
