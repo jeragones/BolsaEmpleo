@@ -173,28 +173,28 @@ namespace CarteraEmpleo
         public String[] PerfilPersona(String user)
         {
             String[] result = new String[6];
-            result[0] = "jeragones@gmail.com";
-            result[1] = "Jorge Rojas Aragonés";
-            result[2] = "D";
-            result[3] = "25 años coordinador";
-            result[4] = "Sucre, San Carlos";
-            result[5] = "12345678";
-            
-            //DataTable usuario = webservice.Select_Usuario(user);
-            //if (usuario.Columns.Count > 2)
-            //{
-            //    foreach (DataRow row in usuario.Rows)
-            //    {
-            //        result[0] = row["ID_CORREO"].ToString();
-            //        result[1] = row["TXT_NOMBRE"].ToString() + " " +
-            //                    row["TXT_APELLIDO1"].ToString() + " " +
-            //                    row["TXT_APELLIDO2"].ToString();
-            //        result[2] = row["TXT_COND_LABORAL"].ToString();
-            //        result[3] = row["TXT_CONOCIMIENTOS"].ToString();
-            //        result[4] = row["DIR_DIRECCION"].ToString();
-            //        result[5] = row["TXT_CONTRASEÑA"].ToString();
-            //    }
-            //}
+            //result[0] = "jeragones@gmail.com";
+            //result[1] = "Jorge Rojas Aragonés";
+            //result[2] = "D";
+            //result[3] = "25 años coordinador";
+            //result[4] = "Sucre, San Carlos";
+            //result[5] = "12345678";
+
+            DataTable usuario = webservice.Select_Usuario(user);
+            if (usuario.Columns.Count > 2)
+            {
+                foreach (DataRow row in usuario.Rows)
+                {
+                    result[0] = row["ID_CORREO"].ToString();
+                    result[1] = row["TXT_NOMBRE"].ToString() + " " +
+                                row["TXT_APELLIDO1"].ToString() + " " +
+                                row["TXT_APELLIDO2"].ToString();
+                    result[2] = row["TXT_COND_LABORAL"].ToString();
+                    result[3] = row["TXT_CONOCIMIENTOS"].ToString();
+                    result[4] = row["DIR_DIRECCION"].ToString();
+                    result[5] = row["TXT_CONTRASEÑA"].ToString();
+                }
+            }
             return result;
         }
 
@@ -213,7 +213,7 @@ namespace CarteraEmpleo
 
         public List<string[]> buscarPersona(string idioma, string condicion, string direccion, string conocimientos) {
             string[] persona = new string[2];
-            string[] persona1 = new string[2]; 
+            //string[] persona1 = new string[2]; 
             List<string[]> lista = new List<string[]>();
             char tmp;
             if (condicion.Equals("Desempleado"))
@@ -221,22 +221,22 @@ namespace CarteraEmpleo
             else
                 tmp = 'E';
 
-            //DataTable candidatos = webservice.Buscar_Personas(idioma, tmp, direccion, conocimientos/*,0,""*/);
-            //foreach (DataRow row in candidatos.Rows)
-            //{
-            //    persona[0] = row["ID_CORREO"].ToString();
-            //    persona[1] = row["TXT_NOMBRE"].ToString() + " " +
-            //                 row["TXT_APELLIDO1"].ToString() + " " +
-            //                 row["TXT_APELLIDO2"].ToString();
-            //    lista.Add(persona);
-            //}
+            DataTable candidatos = webservice.Buscar_Personas(idioma, tmp, direccion, conocimientos/*,0,""*/);
+            foreach (DataRow row in candidatos.Rows)
+            {
+                persona[0] = row["ID_CORREO"].ToString();
+                persona[1] = row["TXT_NOMBRE"].ToString() + " " +
+                             row["TXT_APELLIDO1"].ToString() + " " +
+                             row["TXT_APELLIDO2"].ToString();
+                lista.Add(persona);
+            }
 
-            persona[0] = "jeragones@gmail.com";
-            persona[1] = "Jorge Rojas Aragonés";
-            lista.Add(persona);
-            persona1[0] = "osa@gmail.com";
-            persona1[1] = "Daniel Murillo";
-            lista.Add(persona1);
+            //persona[0] = "jeragones@gmail.com";
+            //persona[1] = "Jorge Rojas Aragonés";
+            //lista.Add(persona);
+            //persona1[0] = "osa@gmail.com";
+            //persona1[1] = "Daniel Murillo";
+            //lista.Add(persona1);
 
             return lista;
         }

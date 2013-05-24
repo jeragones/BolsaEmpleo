@@ -20,78 +20,78 @@ namespace CarteraEmpleo.Clases
         public String IniciarSesion(String p_usuario, String p_contrasena)
         {
             string error = "";
-            cPersonaDatos.NOMBRE = "Jorge Rojas Aragonés";
-            cPersonaDatos.CORREO = "jeragones@gmail.com";
-            cPersonaDatos.CONDICION = 'D';
-            cPersonaDatos.EXPERIENCIA = "25 años coordinador";
-            cPersonaDatos.DIRECCION = "Sucre, San Carlos";
-            String[] s1 = { "Inglés", "Español" };
-            cPersonaDatos.IDIOMA = s1;
-            String[] s2 = { "8914-2348", "2460-1913" };
-            cPersonaDatos.TELEFONO = s2;
-            Site.USUARIO = "jeragones@gmail.com";
-            Site.CONTRASENA = "12345678";
-            Site.TIPO = 3;
+            //cPersonaDatos.NOMBRE = "Jorge Rojas Aragonés";
+            //cPersonaDatos.CORREO = "jeragones@gmail.com";
+            //cPersonaDatos.CONDICION = 'D';
+            //cPersonaDatos.EXPERIENCIA = "25 años coordinador";
+            //cPersonaDatos.DIRECCION = "Sucre, San Carlos";
+            //String[] s1 = { "Inglés", "Español" };
+            //cPersonaDatos.IDIOMA = s1;
+            //String[] s2 = { "8914-2348", "2460-1913" };
+            //cPersonaDatos.TELEFONO = s2;
+            //Site.USUARIO = "jeragones@gmail.com";
+            //Site.CONTRASENA = "12345678";
+            //Site.TIPO = 3;
 
 
-            //DataTable usuario = webservice.Select_Usuario(p_usuario); //webservice.EndSelect_Usuario(p_usuario);        //.Select_Persona("leock123@gmail.com", "123456789");
-            //string error = "";
-            //if (usuario.Columns.Count > 2)
-            //{
-            //    foreach (DataRow row in usuario.Rows)
-            //    {
-            //        if (row["TXT_ESTADO"].ToString().Equals("A"))
-            //        {
-            //            if (p_contrasena.Equals(row["TXT_CONTRASEÑA"].ToString()))
-            //            {
-            //                Site.USUARIO = row["ID_CORREO"].ToString();
-            //                Site.CONTRASENA = row["TXT_CONTRASEÑA"].ToString();
+            DataTable usuario = webservice.Select_Usuario(p_usuario); //webservice.EndSelect_Usuario(p_usuario);        //.Select_Persona("leock123@gmail.com", "123456789");
+            string error = "";
+            if (usuario.Columns.Count > 2)
+            {
+                foreach (DataRow row in usuario.Rows)
+                {
+                    if (row["TXT_ESTADO"].ToString().Equals("A"))
+                    {
+                        if (p_contrasena.Equals(row["TXT_CONTRASEÑA"].ToString()))
+                        {
+                            Site.USUARIO = row["ID_CORREO"].ToString();
+                            Site.CONTRASENA = row["TXT_CONTRASEÑA"].ToString();
 
-            //                if (usuario.Columns.Contains("TXT_CED_JURIDICA"))
-            //                {
-            //                    cEmpresaDatos.CEDJURIDICA = row["TXT_CED_JURIDICA"].ToString();
-            //                    cEmpresaDatos.CORREO = row["ID_CORREO"].ToString(); //Site.USUARIO;
-            //                    cEmpresaDatos.CONTRASEÑA = row["TXT_CONTRASEÑA"].ToString();
-            //                    cEmpresaDatos.NOMBRE = row["TXT_NOMBRE"].ToString();
-            //                    cEmpresaDatos.PAGINA = row["TXT_PAG_WEB"].ToString();
-            //                    cEmpresaDatos.DESCRIPCION = row["TXT_DESC"].ToString();
-            //                    cEmpresaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
-            //                    cEmpresaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
-            //                    Site.TIPO = 2;
-            //                }
-            //                else if (usuario.Columns.Contains("TXT_APELLIDO1"))
-            //                {
-            //                    cPersonaDatos.NOMBRE = row["TXT_NOMBRE"].ToString() + " " +
-            //                                           row["TXT_APELLIDO1"].ToString() + " " +
-            //                                           row["TXT_APELLIDO2"].ToString();
-            //                    cPersonaDatos.CORREO = row["ID_CORREO"].ToString();  //Site.USUARIO;
-            //                    cPersonaDatos.CONTRASEÑA = row["TXT_CONTRASEÑA"].ToString();
-            //                    cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
-            //                    cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
-            //                    cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
-            //                    cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
-            //                    cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
-            //                    Site.TIPO = 3;
-            //                }
-            //                //else {
-            //                //    Site.TIPO = 1;
-            //                //}
-            //            }
-            //            else
-            //            {
-            //                error = "Contraseña incorrecta.";
-            //            }
-            //        }
-            //        else
-            //        {
-            //            error = "No sea ha compleatado el registro.";
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    error = "El nombre de usuario no existe.";
-            //}
+                            if (usuario.Columns.Contains("TXT_CED_JURIDICA"))
+                            {
+                                cEmpresaDatos.CEDJURIDICA = row["TXT_CED_JURIDICA"].ToString();
+                                cEmpresaDatos.CORREO = row["ID_CORREO"].ToString(); //Site.USUARIO;
+                                cEmpresaDatos.CONTRASEÑA = row["TXT_CONTRASEÑA"].ToString();
+                                cEmpresaDatos.NOMBRE = row["TXT_NOMBRE"].ToString();
+                                cEmpresaDatos.PAGINA = row["TXT_PAG_WEB"].ToString();
+                                cEmpresaDatos.DESCRIPCION = row["TXT_DESC"].ToString();
+                                cEmpresaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
+                                cEmpresaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
+                                Site.TIPO = 2;
+                            }
+                            else if (usuario.Columns.Contains("TXT_APELLIDO1"))
+                            {
+                                cPersonaDatos.NOMBRE = row["TXT_NOMBRE"].ToString() + " " +
+                                                       row["TXT_APELLIDO1"].ToString() + " " +
+                                                       row["TXT_APELLIDO2"].ToString();
+                                cPersonaDatos.CORREO = row["ID_CORREO"].ToString();  //Site.USUARIO;
+                                cPersonaDatos.CONTRASEÑA = row["TXT_CONTRASEÑA"].ToString();
+                                cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
+                                cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
+                                cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
+                                cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
+                                cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
+                                Site.TIPO = 3;
+                            }
+                            //else {
+                            //    Site.TIPO = 1;
+                            //}
+                        }
+                        else
+                        {
+                            error = "Contraseña incorrecta.";
+                        }
+                    }
+                    else
+                    {
+                        error = "No sea ha compleatado el registro.";
+                    }
+                }
+            }
+            else
+            {
+                error = "El nombre de usuario no existe.";
+            }
             return error;
         }
 
